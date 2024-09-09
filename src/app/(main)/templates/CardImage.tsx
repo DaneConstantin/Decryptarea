@@ -1,0 +1,57 @@
+"use client"
+import Image from "next/image"
+import Link from 'next/link';
+import { useState } from "react";
+import imageUrlBuilder from "@sanity/image-url"
+
+
+const urlFor = (source: any) =>
+    imageUrlBuilder({ projectId, dataset }).image(source)
+
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId';
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
+
+const CardImage = ({ previewImg, slug }: { previewImg: any, slug: string }) => {
+    const [scroll, setScroll] = useState(false);
+    return (
+        <div className="flex h-[350px] w-auto rounded-xl mb-0 m-3 md:m-5 md:mb-0">
+            <div className="w-full h-auto overflow-hidden">
+                <div className="relative w-full h-full">
+                    <Link href={`/templates/${slug}`}>
+                        {previewImg ? (
+                            <Image
+                                className="rounded-lg"
+                                src={urlFor(previewImg).quality(90).url()}
+                                width={500}
+                                height={800}
+                                alt={previewImg.alt || ""}
+                                style={{
+                                    objectFit: "cover", objectPosition: "top",
+                                    transform: scroll ? `translateY(-100px)` : "translateY(0%)",
+                                    transition: "transform 1.5s ease-out",
+
+                                }}
+                                onMouseEnter={() => setScroll(true)}
+                                onMouseLeave={() => setScroll(false)}
+                            />
+                        ) :
+                            <Image
+                                className="rounded-lg"
+                                src="https://picsum.photos/312/350"
+                                width={500}
+                                height={800}
+                                alt="image not available"
+                                style={{
+                                    objectFit: "cover", objectPosition: "top",
+
+                                }}
+                            />}
+                    </Link>
+                </div>
+
+            </div>
+        </div>
+    )
+}
+
+export default CardImage;

@@ -1,0 +1,9 @@
+#nextFooter,
+#nextFooterBottom,
+#nav,
+.scrollToTop,
+#root .container {
+    display: none !important;
+    position: absolute !important;
+    left: -999;
+}
