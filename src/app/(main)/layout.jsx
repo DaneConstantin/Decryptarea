@@ -9,8 +9,8 @@ import Head from 'next/head';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Made UI - Premium Next.js & Tailwind CSS Templates and Components',
-  description: 'High-quality, customizable, and easy-to-use solutions for faster, more efficient web design.',
+  title: 'Decryptarea - Web3 Templates, dApps, NFTs, News, & Consulting Services',
+  description: 'Decryptarea is your all-in-one Web3 platform offering cutting-edge templates for dApps and NFTs, insightful blogs, a comprehensive Web3 news aggregator, and expert consulting services. Empower your blockchain projects with the tools and guidance you need to thrive in the decentralized future.',
 }
 
 export default function RootLayout({ children }) {
@@ -34,9 +34,9 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#000" />
-        <meta name="description" content="Explore a collection of premium, hand-crafted templates and components built with Next.js, React, and Tailwind CSS to elevate your website development." />
-        <meta name="keywords" content="Next.js, React, Tailwind CSS, templates, components, web development" />
-        <title>Next.js & React Templates | Tailwind Components</title>
+        <meta name="description" content="Decryptarea is your all-in-one Web3 platform offering cutting-edge templates for dApps and NFTs, insightful blogs, a comprehensive Web3 news aggregator, and expert consulting services. Empower your blockchain projects with the tools and guidance you need to thrive in the decentralized future." />
+        <meta name="keywords" content="Web3 Templates, dApps, NFTs, News, & Consulting Services" />
+        <title>Web3 Templates, dApps, NFTs, News, & Consulting Services</title>
         
       </Head>
       <body className={`min-h-screen bg-[#f9f9f9] dark:text-[#f0f0f0] dark:bg-primary-dark transition duration-300 flex flex-col ${inter.className}`} id="root" >

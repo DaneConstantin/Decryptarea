@@ -3,24 +3,24 @@ import Link from 'next/link';
 import CardContent from '../../(main)/templates/CardContent';
 import Container from '../Container';
 
-//import { SanityDocument } from "next-sanity"
+import { SanityDocument } from "next-sanity"
 
-// import { sanityFetch } from "../../../../sanity/lib/fetch"
-// import { FEATURED_QUERY } from "../../../../sanity/lib/queries"
+import { sanityFetch } from "../../../../sanity/lib/fetch"
+import { FEATURED_QUERY } from "../../../../sanity/lib/queries"
 import { Key } from 'react';
 
 async function getData() {
-  // const featured = await sanityFetch<SanityDocument[]>({
-  //   query: FEATURED_QUERY,
-  // });
+  const featured = await sanityFetch<SanityDocument[]>({
+    query: FEATURED_QUERY,
+  });
 
-  return  null;
+  return featured;
 
 }
 export default async function FeaturedTemplates() {
   const data = await getData();
 
-  if (!data || data === 0) {
+  if (!data || data.length === 0) {
     return <section>No data </section>;
   }
 

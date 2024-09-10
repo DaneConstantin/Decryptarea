@@ -1,9 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Figtree } from 'next/font/google';
-
-const figtree = Figtree({ subsets: ['latin'] })
-
 
 const LinkItem = ({ href, text }) => (
     <Link className="inline-flex  text-sm gap-x-2 text-[#999] hover:text-gray-800 dark:hover:text-gray-200" href={href}>
@@ -34,9 +30,8 @@ export default function FooterMenu() {
         <div className="flex flex-col">
             <div className="col-span-full">
                 <Link href="/" className="flex gap-2">
-                    <Image src="/img/madeui-logo.png" width={35} height={35} alt="Made UI logo of a temple" className="p-0.5 dark:invert" />
+                    <Image src="/img/cryptostats.png" width={160} height={35} alt="Decryptarea logo" className="p-0.5 dark:invert" />
 
-                    <h1 className={`${figtree.className} font-sans text-4xl font-medium leading-none`}>Made UI</h1>
 
                 </Link>
                 <p className='text-xs py-2'>Next-Gen Templates for Speedy Development </p>

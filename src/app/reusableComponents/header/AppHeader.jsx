@@ -6,9 +6,6 @@ import Image from "next/image"
 import Link from "next/link";
 import HamburgerMenu from './hamburgerMenu';
 import NavLinks from "./NavLinks";
-import { Figtree } from 'next/font/google';
-
-const figtree = Figtree({ subsets: ['latin'] })
 
 export default function AppHeader() {
 
@@ -19,9 +16,9 @@ export default function AppHeader() {
 				<div className="flex items-center justify-center max-w-[1440px] mx-auto">
 
 					<Link href="/" className="flex gap-2">
-						<Image src="/img/madeui-logo.png" width={25} height={25} alt="Made UI logo of a temple" className="p-0.5 dark:invert" />
+						<Image src="/img/cryptostats.png" width={160} height={44} alt="Decryptarea logo" className="p-0.5 dark:invert" />
 
-						<h1 className={`${figtree.className} font-sans text-2xl font-medium leading-none`}>Made UI</h1>
+						
 					</Link>
 
 					<div className="hidden sm:flex sm:justify-end sm:flex-grow"> {/* visible only on large screen */}
