@@ -2,6 +2,7 @@
 import Hero from "../reusableComponents/homepageElements/Hero";
 import FeaturedTemplates from "../reusableComponents/homepageElements/FeaturedTemplates";
 import ContactSection from "../reusableComponents/homepageElements/ContactSection";
+import HomeWidget from "../reusableComponents/homepageElements/HomeWidget";
 
 export default function Home() {
 
@@ -15,11 +16,12 @@ export default function Home() {
         <div className="darkGradientBg">
         </div>
       </header>
+      <HomeWidget />
       <FeaturedTemplates />
 
 
       <ContactSection />
-     
+
     </main >
   );
 }
