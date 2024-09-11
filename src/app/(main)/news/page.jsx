@@ -78,3 +78,4 @@ export default async function News() {
     </div>
   );
 }
+export const revalidate = 0;

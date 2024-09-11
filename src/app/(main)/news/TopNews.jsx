@@ -1,8 +1,16 @@
 // app/top-news/page.js (or a similar path based on your app directory structure)
 import Link from 'next/link';
 import { fetchRssFeed } from '../../utils/fetchRssFeed';
+import ReadFullButton from '../../reusableComponents/homepageElements/ReadFullButton';
 
-const TopNews = async () => {
+// Helper function to format date
+const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    return date.toLocaleDateString('en-GB', options); // 'en-GB' gives day month year format
+};
+
+export default async function TopNews() {
     const url = 'https://bitcoinmagazine.com/.rss/full/';
     const posts = await fetchRssFeed(url);
     console.log(posts[0].content)
@@ -21,30 +29,36 @@ const TopNews = async () => {
                             <p className="mt-5 text-medium leading-6 text-gray-700  hover:text-gray-500 dark:text-gray-400 ">{posts[0].description[0]}</p>
                             <div className="flex items-center mt-6">
 
-                                <img className="object-cover object-center w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="Author" />
-                                <div className="mx-4">
-                                    <h1 className="text-sm text-gray-700 dark:text-gray-200">Amelia Anderson</h1>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">Lead Developer</p>
-                                </div>
+                                <ReadFullButton link={posts[0].link[0]} />
                             </div>
                         </div>
                     </div>
                 )}
             </div>
-            <div className="mt-8 lg:w-2/5 lg:mt-0 lg:px-6">
-                {posts.slice(1, 5).map((post, index) => (
-                    <div key={index}>
-                        <Link href={post.link[0]}><h3 className="text-lg capitalize">{post.title}</h3>
-                        </Link>
-                        <p className="block mt-2 line-clamp-3 font-medium text-gray-700 hover:text-gray-500 dark:text-gray-400">
-                            {post.description}
-                        </p>
-                        {index < 3 && <hr className="my-6 border-gray-200 dark:border-gray-700" />}
-                    </div>
-                ))}
+            <div className="mt-8 lg:w-2/5 lg:mt-0">
+
+                <div className="lg:px-6 border-[1px] border-gray-200 dark:border-[#ffffff1a] rounded-xl py-4 ">
+                    <h4 className='mb-6 text-2xl font-bold'>The Latest</h4>
+
+                    {posts.slice(1, 5).map((post, index) => (
+                        <div key={index}>
+                            <Link href={post.link[0]}><h3 className="text-lg capitalize">{post.title}</h3>
+                            </Link>
+                            <p className="mt-2 line-clamp-2 font-medium text-gray-700 hover:text-gray-500 dark:text-gray-400">
+                                {post.description}
+                            </p>
+                            <p className='my-2 text-xs opacity-[0.5]'> {formatDate(post.pubDate[0])}</p>
+                            {index < 3 && <hr className="my-4 border-gray-200 dark:border-gray-700" />}
+                        </div>
+                    ))}
+
+                </div>
+                <div className="mt-6 lg:px-6 border-[1px] border-gray-200 dark:border-[#ffffff1a] rounded-xl py-4 ">
+                    <h4 className='font-black text-center opacity-[0.3]'>Sponsor</h4>
+                </div>
             </div>
         </div>
     );
 };
 
-export default TopNews;
+

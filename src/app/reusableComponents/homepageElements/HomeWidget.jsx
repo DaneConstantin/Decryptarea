@@ -5,7 +5,7 @@ import TopNews from "../../(main)/news/TopNews"
 
 const HomeWidget = () => {
     return (
-        <section className="bg-white dark:bg-primary-dark border-y-[1px] border-gray-200 dark:border-[#ffffff1a]">
+        <section className="bg-white dark:bg-primary-dark ">
             <Container className="py-8 xl:px-5 px-4 md:px-8 mx-auto max-w-[1440px] ">
                 <div className="flex justify-left items-end gap-4 mb-8">
                     <h2>Recent News</h2>
