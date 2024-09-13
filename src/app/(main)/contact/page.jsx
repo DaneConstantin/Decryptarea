@@ -1,6 +1,5 @@
 import Container from "../../reusableComponents/Container";
 import Link from "next/link";
-import ContactForm from "../../reusableComponents/ContactForm";
 
 
 export default function ContactPage() {
@@ -60,7 +59,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <ContactForm />
+       
         </div>
       </Container >
 
