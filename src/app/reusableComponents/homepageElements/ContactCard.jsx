@@ -28,7 +28,7 @@ export default function ContactCard() {
 
             <div className="flex items-center justify-center flex-col w-48 space-y-4 p-4 rounded-xl bg-white shadow-sm dark:bg-gradient-to-b from-[#131415] to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33]">
                 <div className="flex items-center">
-                    <Link href="https://t.me/madeui_code" target="_blank"> <FaTelegram size={35} />
+                    <Link href="https://t.me/" target="_blank"> <FaTelegram size={35} />
                     </Link>
                 </div>
                 <div className="px-5">
@@ -36,9 +36,9 @@ export default function ContactCard() {
                         Telegram
                     </h3>
                     <div className="text-sm text-[#999] dark:text-gray-300">
-                        <Link href="https://t.me/madeui_code" target="_blank">
+                        <Link href="https://t.me/" target="_blank">
                             <div className="text-sm text-blue-600 font-bold dark:text-blue-500 my-2">
-                                @t.me/madeui_code
+                                @t.me/
                             </div>
                         </Link>
                     </div>

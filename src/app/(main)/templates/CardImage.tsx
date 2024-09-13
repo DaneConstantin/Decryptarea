@@ -5,14 +5,16 @@ import { useState } from "react";
 import imageUrlBuilder from "@sanity/image-url"
 
 
-const urlFor = (source: any) =>
+
+const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
 
-const CardImage = ({ previewImg, slug }: { previewImg: any, slug: string }) => {
+const CardImage = ({ previewImg, slug }: { previewImg: string, slug: string }) => {
     const [scroll, setScroll] = useState(false);
+    console.log(previewImg, "aici2");
     return (
         <div className="flex h-[350px] w-auto rounded-xl mb-0 m-3 md:m-5 md:mb-0">
             <div className="w-full h-auto overflow-hidden">
@@ -24,7 +26,7 @@ const CardImage = ({ previewImg, slug }: { previewImg: any, slug: string }) => {
                                 src={urlFor(previewImg).quality(90).url()}
                                 width={500}
                                 height={800}
-                                alt={previewImg.alt || ""}
+                                alt="Template preview image"
                                 style={{
                                     objectFit: "cover", objectPosition: "top",
                                     transform: scroll ? `translateY(-100px)` : "translateY(0%)",

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { fetchRssFeed } from '../../utils/fetchRssFeed';
 import ReadFullButton from '../../reusableComponents/homepageElements/ReadFullButton';
+import Image from 'next/image';
 
 // Helper function to format date
 const formatDate = (dateString) => {
@@ -19,7 +20,7 @@ export default async function TopNews() {
             <div className="lg:w-3/5 lg:px-6">
                 {posts[0] && (
                     <div>
-                        <img className="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl" src={posts[0]['enclosure'][0].url[0] || 'https://via.placeholder.com/150'} alt={posts[0].title} />
+                        <Image className="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl" width={20} height={20} src={posts[0]['enclosure'][0].url[0] || 'https://via.placeholder.com/150'} alt={posts[0].title} />
                         <div>
                             <p className="mt-6 text-sm text-blue-500 uppercase my-4">Want to know</p>
                             <Link href={posts[0].link[0]} target='_blank' className="max-w-lg mt-4 text-2xl font-semibold leading-tight text-gray-800 dark:text-white">

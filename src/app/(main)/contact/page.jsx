@@ -27,8 +27,8 @@ export default function ContactPage() {
                   <h4 className="mb-1 text-xl font-bold dark:text-[#f0f0f0]">
                     Telegram
                   </h4>
-                  <Link target="_blank" href="https://t.me/madeui" className="text-base text-indigo-500">
-                    @madeui
+                  <Link target="_blank" href="https://t.me/" className="text-base text-indigo-500">
+                   
                   </Link>
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                     Email Address
                   </h4>
                   <p className="text-base text-indigo-500">
-                    contact@madeui.com
+                   
                   </p>
                 </div>
               </div>

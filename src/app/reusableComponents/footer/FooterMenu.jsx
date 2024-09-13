@@ -52,7 +52,7 @@ export default function FooterMenu() {
                 </div>
                 <div className="flex flex-col md:grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
                     <div className="col-span-1">
-                        <h3 className="my-3">Made UI </h3>
+                        <h3 className="my-3">DecryptArea </h3>
                         <div className="flex items-center md:items-start space-x-4 md:space-x-0 md:flex-col md:space-y-3">
                             {aboutMe.map((item, index) => (
                                 <LinkItem key={index} href={item.href} text={item.text} />

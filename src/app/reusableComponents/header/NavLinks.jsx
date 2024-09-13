@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
 import { RxCaretDown } from "react-icons/rx";
@@ -152,6 +152,7 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
         </NavigationMenu.Link>
     </li>
 ));
+ListItem.displayName = 'ListItem';
 
 export default NavLinks;
 

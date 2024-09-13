@@ -4,7 +4,7 @@ import imageUrlBuilder from "@sanity/image-url"
 import { SanityDocument } from "next-sanity"
 import Link from "next/link";
 import { GoArrowLeft } from "react-icons/go";
-import { Fragment, Key } from "react";
+import { Fragment } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import NextBreadcrumb from "../../reusableComponents/NextBreadcrumb";
 import PreviewButton from "../../reusableComponents/homepageElements/PreviewButton";
@@ -13,7 +13,7 @@ import DownloadButton from "../../reusableComponents/homepageElements/DownloadBu
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
 
-const urlFor = (source: any) =>
+const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
 
 export default function Product({ post }: { post: SanityDocument }) {

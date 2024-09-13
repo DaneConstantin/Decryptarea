@@ -38,11 +38,11 @@ export default function Hero() {
           </div>
 
 
-          <h1 className="my-8 text-3xl font-bold text-gray-800 md:text-4xl dark:text-gray-100">Full-Stack Templates and Components</h1>
+          <h1 className="my-8 text-3xl font-bold text-gray-800 md:text-4xl dark:text-gray-100">Full-Stack Web3 Templates and Components</h1>
 
           <div>
             <p className="max-w-md mx-auto my-4 text-base text-[#999] font-normal md:leading-relaxed  dark:text-gray-400 text-center">
-              Explore a collection of premium, hand-crafted templates built to elevate your web projects.
+              Explore a collection of premium, hand-crafted templates built to elevate your Web3 projects.
             </p>
           </div>
 

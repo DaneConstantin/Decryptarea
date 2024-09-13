@@ -1,6 +1,6 @@
 "use client"
 import './previewCSS.css';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Figtree } from 'next/font/google';
@@ -39,9 +39,9 @@ const PreviewFrame = ({ iFrameLink }) => {
                 <nav className="flex items-center justify-between py-4">
                     <div className="justify-start flex items-center gap-4 flex-1">
                         <Link href="/" className="flex gap-2">
-                            <Image src="/img/madeui-logo.png" width={25} height={25} alt="Made UI logo of a temple" className="p-0.5 invert" />
+                            {/* <Image src="/img/madeui-logo.png" width={25} height={25} alt="Made UI logo of a temple" className="p-0.5 invert" /> */}
 
-                            <h1 className={`${figtree.className} font-sans text-2xl font-medium leading-none text-white `}>Made UI</h1>
+                            <h1 className={`${figtree.className} font-sans text-2xl font-medium leading-none text-white `}>DecryptArea</h1>
                         </Link>
                     </div>
                     <div className="hidden w-max sm:flex sm:flex-col sm:align-center">

@@ -57,7 +57,7 @@ export default async function FeaturedTemplates() {
 
         <div className="grid grid-cols-1 gap-8 mx-auto my-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center sm:justify-items-stretch">
           {
-            data.map((template: any, index: Key | null | undefined) => (
+            data.map((template: SanityDocument, index: Key | null | undefined) => (
               <CardContent key={index} propu={template} />
             ))
           }
