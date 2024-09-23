@@ -6,6 +6,7 @@ export const FEATURED_QUERY = groq`*[_type == "product" && defined(productCatego
 
 // export const FEATURED_COMPONENT_QUERY = groq`*[_type == "component" && defined(productCategory) && productCategory->slug.current == 'component']`;
 
+export const CURATED_NEWS = groq`*[_type == 'newsArticles' && defined(link)]`;
 
 export const ALLTEMPLATES_QUERY = groq`*[_type == 'product' && defined(productCategory) && productCategory->slug.current == 'template']`;
 
