@@ -23,11 +23,11 @@ export default async function TopNews() {
                         <Image className="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl" width={20} height={20} src={posts[0]['enclosure'][0].url[0] || 'https://via.placeholder.com/150'} alt={posts[0].title} />
                         <div>
                             <p className="mt-6 text-sm text-blue-500 uppercase my-4">Want to know</p>
-                            <Link href={posts[0].link[0]} target='_blank' className="max-w-lg mt-4 text-2xl font-semibold leading-tight text-gray-800 dark:text-white">
+                            <Link href={posts[0].link[0]} target='_blank' className="max-w-lg mt-4 text-2xl font-semibold leading-tight  hover:text-gray-500">
                                 {posts[0].title}
                             </Link>
 
-                            <p className="mt-5 text-medium leading-6 text-gray-700  hover:text-gray-500 dark:text-gray-400 ">{posts[0].description[0]}</p>
+                            <p className="mt-5 text-medium leading-6 text-gray-700   dark:text-gray-400 ">{posts[0].description[0]}</p>
                             <div className="flex items-center mt-6">
 
                                 <ReadFullButton link={posts[0].link[0]} />
@@ -43,9 +43,9 @@ export default async function TopNews() {
 
                     {posts.slice(1, 5).map((post, index) => (
                         <div key={index}>
-                            <Link href={post.link[0]}><h3 className="text-lg capitalize">{post.title}</h3>
+                            <Link href={post.link[0]}><h3 className="text-lg capitalize hover:text-gray-500">{post.title}</h3>
                             </Link>
-                            <p className="mt-2 line-clamp-2 font-medium text-gray-700 hover:text-gray-500 dark:text-gray-400">
+                            <p className="mt-2 line-clamp-2 font-medium text-gray-700  dark:text-gray-400">
                                 {post.description}
                             </p>
                             <p className='my-2 text-xs opacity-[0.5]'> {formatDate(post.pubDate[0])}</p>
