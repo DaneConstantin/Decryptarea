@@ -14,7 +14,6 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
 
 const CardImage = ({ previewImg, slug }: { previewImg: string, slug: string }) => {
     const [scroll, setScroll] = useState(false);
-    console.log(previewImg, "aici2");
     return (
         <div className="flex h-[350px] w-auto rounded-xl mb-0 m-3 md:m-5 md:mb-0">
             <div className="w-full h-auto overflow-hidden">
