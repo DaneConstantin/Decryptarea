@@ -40,17 +40,22 @@ export default async function TopNews() {
                 <div className="lg:px-6 border-[1px] border-gray-200 dark:border-[#ffffff1a] rounded-xl py-4 ">
                     <h4 className='mb-6 text-2xl font-bold'>The Latest</h4>
 
-                    {articles.slice(1, 4).map((post) => (
+                    {articles.slice(1, 4).map((post, index) => (
                         <div key={post.link}>
-                            <Link href={post.link}><h3 className="text-lg capitalize hover:text-gray-300">{post.title}</h3>
+                            <Link href={post.link}>
+                                <h3 className="text-lg capitalize hover:text-gray-300">{post.title}</h3>
                             </Link>
 
                             <DescriptionText article={post} />
 
-                            <p className='my-2 text-xs opacity-[0.5]'> {formatDate(post.pubDate)}</p>
-                            {post.length < 3 && <hr className="my-4 border-gray-200 dark:border-gray-700" />}
+                            <p className='my-2 text-xs opacity-[0.5]'>{formatDate(post.pubDate)}</p>
+
+                            {index < articles.slice(1, 4).length - 1 && (
+                                <hr className="my-2 border-gray-300 dark:border-gray-600" />
+                            )}
                         </div>
                     ))}
+
 
                 </div>
                 <div className="mt-6 lg:px-6 border-[1px] border-gray-200 dark:border-[#ffffff1a] rounded-xl py-4 ">

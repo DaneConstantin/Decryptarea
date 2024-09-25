@@ -24,7 +24,15 @@ async function getSanityTitles() {
 export async function fetchNewsWithSanity() {
   const urls = [
     'https://bitcoinmagazine.com/.rss/full/',
+    'https://cointelegraph.com/rss/tag/altcoin',
+    'https://cointelegraph.com/rss/tag/bitcoin',
     'https://cointelegraph.com/rss/tag/blockchain',
+    'https://cointelegraph.com/rss/tag/ethereum',
+    'https://cointelegraph.com/rss/category/analysis',
+    'https://cointelegraph.com/rss/category/market-analysis',
+    'https://cointelegraph.com/rss/category/weekly-overview',
+    'https://cointelegraph.com/rss/tag/regulation',
+    'https://cointelegraph.com/rss/category/in-depth',
     'https://www.coindesk.com/arc/outboundfeeds/rss/',
   ];
 
@@ -33,7 +41,7 @@ export async function fetchNewsWithSanity() {
 
   // Flatten the array of posts
   const rssPosts = rssPostsArray.flat();
-  
+
   // Fetch Sanity titles
   const sanityTitles = await getSanityTitles();
 

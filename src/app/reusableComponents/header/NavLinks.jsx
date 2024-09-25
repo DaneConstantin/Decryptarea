@@ -18,7 +18,7 @@ const NavLinks = () => {
                     </NavigationMenu.Link>
                 </NavigationMenu.Item>
                 <NavigationMenu.Item>
-                    <NavigationMenu.Trigger className="block text-left text-sm text-primary-dark leading-8 dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 pt-3 sm:pt-0 border-t-2 sm:border-t-0 border-primary-light dark:border-[#ffffff1a]">
+                    <NavigationMenu.Trigger className="block text-left text-sm text-primary-dark leading-8 dark:text-white hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 pt-3 sm:pt-0 border-t-2 sm:border-t-0 border-primary-light dark:border-[#ffffff1a]">
                         News{' '}
                         <RxCaretDown
                             className="inline-block relative transition-transform duration-[150] ease-in group-data-[state=open]:-rotate-180"
@@ -54,6 +54,46 @@ const NavLinks = () => {
                             <ListItem href="https://icons.radix-ui.com/" title="Business & Political">
                                 Top Political and business news from around the globe
                             </ListItem>
+                        </ul>
+                    </NavigationMenu.Content>
+                </NavigationMenu.Item>
+                <NavigationMenu.Item>
+                    <NavigationMenu.Trigger className="block text-left text-sm text-primary-dark leading-8 dark:text-white hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 pt-3 sm:pt-0 border-t-2 sm:border-t-0 border-primary-light dark:border-[#ffffff1a]">
+                        Guides{' '}
+                        <RxCaretDown
+                            className="inline-block relative transition-transform duration-[150] ease-in group-data-[state=open]:-rotate-180"
+                            aria-hidden
+                        />
+                    </NavigationMenu.Trigger>
+                    <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto">
+                        <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
+                            <li className="row-span-3 grid">
+                                <NavigationMenu.Link asChild>
+                                    <div
+                                        className="focus:shadow-violet7 from-purple9 to-indigo9 flex
+                    h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
+                                       
+                                    >
+
+                                        <div className="mt-4 mb-[7px] text-[18px] font-medium leading-[1.2] text-white">
+                                            Navigate Web3 safely
+                                        </div>
+                                        <p className="text-mauve4 text-[14px] leading-[1.3]">
+                                            Step-by-step guides and tips to avoid scam projects.
+                                        </p>
+                                    </div>
+                                </NavigationMenu.Link>
+                            </li>
+                            <ListItem href="/buy" title="Buy Cryptocurrencies">
+                                General Crypto Buying Guide
+                            </ListItem>
+                            <ListItem href="" title="Centralized">
+                                Buy on centralized Exchanges
+                            </ListItem>
+                            <ListItem href="/colors" title="Decentralized">
+                                Buy on decentralized Exchanges (DEXs)
+                            </ListItem>
+
                         </ul>
                     </NavigationMenu.Content>
                 </NavigationMenu.Item>
@@ -140,14 +180,14 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
         <NavigationMenu.Link asChild>
             <a
                 className={classNames(
-                    'focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
+                    'focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 dark:hover:bg-[#1C092B] block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors',
                     className
                 )}
                 {...props}
                 ref={forwardedRef}
             >
-                <div className="text-violet12 mb-[5px] font-medium leading-[1.2]">{title}</div>
-                <p className="text-mauve11 leading-[1.4]">{children}</p>
+                <div className="text-violet12 dark:text-violet8 mb-[5px] font-medium leading-[1.2]">{title}</div>
+                <p className="text-mauve11 dark:text-gray-100 leading-[1.4]">{children}</p>
             </a>
         </NavigationMenu.Link>
     </li>

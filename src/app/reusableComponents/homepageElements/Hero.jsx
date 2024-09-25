@@ -1,22 +1,22 @@
 import Link from "next/link";
 import Container from "../Container";
-
-import { EasyCustomizable, LightningFast } from "../../../../public/img/generalSVGgIcons";
-import Image from "next/image";
+import { LuNewspaper, LuShoppingBag } from "react-icons/lu";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Buttons = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
 
-      <Link href="/templates" className="p-3 px-4 rounded-xl bg-gradient-to-b from-[#131415] to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33]">
+      <Link href="/templates" className="rounded-full border border-[#ffffff1a] border-gray-300 bg-gradient-to-br from-[#ffffff] to-[#e6e6e6] p-3 px-6 text-sm leading-normal text-black shadow-sm hover:border-[#ececec] hover:to-[#dfdfdf]">
 
-
-        <span className='text-[#f0f0f0] text-sm leading-normal'>Explore All Templates</span>
+        <LuNewspaper className="inline mr-2 h-5 w-5" />
+        <span className='text-sm leading-normal'>Explore Guides</span>
 
       </Link>
 
-      <Link className="p-3 px-4 rounded-xl bg-gradient-to-b from-[#131415] to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33]" href="/components">
-        <span className='text-[#f0f0f0] text-sm leading-normal'>Browse Components Library</span>
+      <Link className="rounded-full border border-[#ffffff1a] text-white border-gray-300 dark:border-purple-700 bg-gradient-to-br from-purple-700 to-purple-800 p-3 px-6 text-sm leading-normal  shadow-sm hover:border-[#ececec] dark:hover:border-purple-900 hover:to-purple-900" href="/components">
+        <LuShoppingBag className="inline mr-2 h-5 w-5" />
+        <span className='text-sm leading-normal'>Browse Templates</span>
       </Link>
     </div>
   )
@@ -27,22 +27,12 @@ export default function Hero() {
     <Container>
       <div className="flex flex-col items-center justify-center text-center z-10 relative">
         <div className="self-center max-w-6xl md:py-4 md:mx-10">
-          <div className="flex gap-3 justify-center">
-            <p className="text-sm ">Created by </p>
-            <div className="relative rounded-full aspect-square h-6 w-6">
-              <Image src="/img/Xpro.png" className="rounded-full" alt="Profile image of DCoder"
-                fill
-              />
-            </div>
-            <Link href="https://x.com/ethicoder" target="_blank" className="text-sm  text-indigo-500  ">DCoder</Link>
-          </div>
 
-
-          <h1 className="my-8 text-3xl font-bold text-gray-800 md:text-4xl dark:text-gray-100">Full-Stack Web3 Templates and Components</h1>
+          <h1 className="my-8 text-3xl font-bold text-gray-800 md:text-5xl dark:text-gray-100">Decrypt the Future</h1>
 
           <div>
             <p className="max-w-md mx-auto my-4 text-base text-[#999] font-normal md:leading-relaxed  dark:text-gray-400 text-center">
-              Explore a collection of premium, hand-crafted templates built to elevate your Web3 projects.
+              Cutting-edge Web3 resources, blockchain insights, cryptocurrency news. Explore, learn, and build the decentralized future.
             </p>
           </div>
 
@@ -50,25 +40,17 @@ export default function Hero() {
         </div>
 
 
-        <div id="stack" className="my-8">
-          
-          <div className="flex gap-4 justify-center mt-8">
-            <div className="flex gap-2 align-middle">
-              <LightningFast />
-              <p className='text-sm text-center font-medium tracking-tight leading-normal text-[#999]'>Lightning Fast</p>
-            </div>
-            <div className="flex gap-2 align-middle">
-              <EasyCustomizable />
-              <p className='text-sm text-center font-medium tracking-tight leading-normal text-[#999]'>Easily Customizable</p>
-            </div>
-
-          </div>
-
-
+        <div id="stack">
+          <Link
+            href="/about" className="flex gap-2 text-sm justify-center text-purple-500 dark:text-purple-200 items-center my-8">
+            Learn more about our platform
+            <FaArrowRight className=" h-5 w-5" />
+          </Link>
         </div>
 
 
+
       </div>
-    </Container>
+    </Container >
   );
 }

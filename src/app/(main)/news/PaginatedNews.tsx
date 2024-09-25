@@ -30,10 +30,8 @@ const formatDate = (dateString: string | number | Date) => {
 const PaginatedNews: React.FC<PaginatedNewsProps> = ({ matchingArticles }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedCategory, setSelectedCategory] = useState('');
-    const articlesPerPage = 3;
+    const articlesPerPage = 6;
 
-    // Extract unique categories 
-    console.log(matchingArticles);
     const categories = Array.from(new Set(matchingArticles.map(article => article.category)));
 
     // Filter articles based on selected category
@@ -48,7 +46,6 @@ const PaginatedNews: React.FC<PaginatedNewsProps> = ({ matchingArticles }) => {
     // Calculate the articles to display on the current page
     const startIndex = (currentPage - 1) * articlesPerPage;
     const selectedArticles = sortedArticles.slice(startIndex, startIndex + articlesPerPage);
-    console.log(categories);
     return (
         <>
             <CategoryFilter
