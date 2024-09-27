@@ -2,15 +2,13 @@
 
 import { groq } from "next-sanity";
 
-export const FEATURED_QUERY = groq`*[_type == "product" && defined(productCategory) && productCategory->slug.current == 'template' && featured == true]`;
+export const FEATURED_QUERY = groq`*[_type == "product" && featured == true]`;
 
 // export const FEATURED_COMPONENT_QUERY = groq`*[_type == "component" && defined(productCategory) && productCategory->slug.current == 'component']`;
 
 export const CURATED_NEWS = groq`*[_type == 'newsArticles' && defined(link)]`;
 
-export const ALLTEMPLATES_QUERY = groq`*[_type == 'product' && defined(productCategory) && productCategory->slug.current == 'template']`;
-
-export const ALLCOMPONENTS_QUERY = groq`*[_type == 'component' && defined(productCategory) && productCategory->slug.current == 'component']`;
+export const ALLPRODUCTS_QUERY = groq`*[_type == 'product']`;
 
 
 export const POSTS_QUERY = groq`*[_type == "product" && defined(slug)]`;

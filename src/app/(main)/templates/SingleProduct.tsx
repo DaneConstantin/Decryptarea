@@ -17,7 +17,7 @@ const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
 
 export default function Product({ post }: { post: SanityDocument }) {
-    const { title, mainImage, description, content, buyLink, database, css, framework, useCase, slug } = post;
+    const { title, mainImage, description, content, buyLink, integration, pricing, compatibility, useCase, slug } = post;
     return (
         <main className="container max-w-7xl mx-auto  mt-[100px]">
             <NextBreadcrumb
@@ -63,47 +63,27 @@ export default function Product({ post }: { post: SanityDocument }) {
                     <table className="table-auto border-collapse border-gray-200 dark:border-[#ffffff1a]">
                         <tbody>
                             <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
-                                <th className="text-left">Framework</th>
+                                <th className="text-left">Compatibility</th>
                                 <td className="text-right">
-                                    {framework?.map((value: string, index: number) => (
-                                        <Fragment key={index}>
-                                            {index > 0 && ', '}
-                                            <span>{value}</span>
-                                        </Fragment>
-                                    ))}
+                                    {compatibility}
                                 </td>
                             </tr>
                             <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
                                 <th className="text-left">Use Case</th>
                                 <td className="text-right">
-                                    {useCase?.map((value: string, index: number) => (
-                                        <Fragment key={index}>
-                                            {index > 0 && ', '}
-                                            <span>{value}</span>
-                                        </Fragment>
-                                    ))}
+                                    {useCase}
                                 </td>
                             </tr>
                             <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
-                                <th className="text-left">CSS</th>
+                                <th className="text-left">Pricing</th>
                                 <td className="text-right">
-                                    {css?.map((value: string, index: number) => (
-                                        <Fragment key={index}>
-                                            {index > 0 && ', '}
-                                            <span>{value}</span>
-                                        </Fragment>
-                                    ))}
+                                    {pricing}
                                 </td>
                             </tr>
                             <tr className="leading-10">
-                                <th className="text-left">Database</th>
+                                <th className="text-left">Integration</th>
                                 <td className="text-right">
-                                    {database?.map((value: string, index: number) => (
-                                        <Fragment key={index}>
-                                            {index > 0 && ', '}
-                                            <span>{value}</span>
-                                        </Fragment>
-                                    ))}
+                                    {integration}
                                 </td>
                             </tr>
                         </tbody>

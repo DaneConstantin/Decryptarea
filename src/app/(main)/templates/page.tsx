@@ -3,12 +3,12 @@ import Filter from './Filter';
 import { SanityDocument } from "next-sanity"
 
 import { sanityFetch } from "../../../../sanity/lib/fetch"
-import { ALLTEMPLATES_QUERY } from "../../../../sanity/lib/queries"
+import { ALLPRODUCTS_QUERY } from "../../../../sanity/lib/queries"
 
 export default async function Templates() {
 
 	const templateProducts = await sanityFetch<SanityDocument[]>({
-		query: ALLTEMPLATES_QUERY,
+		query: ALLPRODUCTS_QUERY,
 	})
 	return (
 		<>

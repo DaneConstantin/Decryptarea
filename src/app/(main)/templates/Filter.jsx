@@ -10,39 +10,34 @@ const filters = [
         id: 'UseCase',
         name: 'Use Case',
         options: [
-            { value: 'Startup', label: 'Startup' },
-            { value: 'Ecommerce', label: 'Ecommerce' },
-            { value: 'Blog', label: 'Blog' },
-            { value: 'SaaS', label: 'SaaS' },
-            { value: 'CMS', label: 'CMS' }
+            { value: 'NFT', label: 'NFT Platforms' },
+            { value: 'Token', label: 'Token Management' },
         ],
     },
     {
-        id: 'Framework',
-        name: 'Framework',
+        id: 'Integration',
+        name: 'Integration Type',
         options: [
-            { value: 'Next.js', label: 'Next.js', checked: false },
-            { value: 'React', label: 'React', checked: false },
-            { value: 'Astro', label: 'Astro', checked: true },
+            { value: 'Front', label: 'Frontend', checked: false },
+            { value: 'Back', label: 'Backend', checked: false },
+            { value: 'Full', label: 'Full Stack', checked: true },
         ],
     },
     {
-        id: 'CSS',
-        name: 'CSS',
+        id: 'Pricing',
+        name: 'Pricing',
         options: [
-            { value: 'TailwindCSS', label: 'Tailwind', checked: false },
-            { value: 'Chakra', label: 'Chakra', checked: false },
-            { value: 'CSS Modules', label: 'CSS Modules', checked: false },
-            { value: 'Vanilla CSS', label: 'Vanilla CSS', checked: false },
-            { value: 'Material UI', label: 'Material UI', checked: false },
+            { value: 'Free', label: 'Free', checked: false },
+            { value: 'Paid', label: 'Paid', checked: false },
         ],
     },
     {
-        id: 'Database',
-        name: 'Database',
+        id: 'Compatibility',
+        name: 'Blockchain Compatibility',
         options: [
-            { value: 'MongoDB', label: 'MongoDB', checked: false },
-            { value: 'Supabase', label: 'Supabase', checked: false },
+            { value: 'EVM', label: 'EVM Blockchains', checked: false },
+            { value: 'Solana', label: 'Solana', checked: false },
+            { value: 'Ton', label: 'Ton', checked: false },
 
         ],
     },
@@ -62,7 +57,7 @@ const Filter = ({ products }) => {
 
             filteredProducts = filteredProducts.filter((product) => {
                 const starterArray = "";
-                const combinedArray = starterArray.concat(product.useCase, product.database, product.framework, product.css);
+                const combinedArray = starterArray.concat(product.useCase, product.integration, product.pricing, product.compatibility, product.productType);
                 return selectedCategory.every((cat) => combinedArray.includes(cat))
 
             }
@@ -144,6 +139,26 @@ const Filter = ({ products }) => {
                                             />
                                             All
                                         </label>
+                                        <label className="text-sm text-[#999] py-2 block">
+                                            <input
+                                                type="checkbox"
+                                                checked={selectedCategory.includes('Components')}
+                                                onChange={() => toggleCategorySelection('Components')}
+                                                className="mr-3 h-4 w-4 rounded border-gray-200 dark:border-[#ffffff1a] text-indigo-600 focus:ring-indigo-500"
+
+                                            />
+                                            Components
+                                        </label>
+                                        <label className="text-sm text-[#999] py-2 block">
+                                            <input
+                                                type="checkbox"
+                                                checked={selectedCategory.includes('Templates')}
+                                                onChange={() => toggleCategorySelection('Templates')}
+                                                className="mr-3 h-4 w-4 rounded border-gray-200 dark:border-[#ffffff1a] text-indigo-600 focus:ring-indigo-500"
+
+                                            />
+                                            Full Templates
+                                        </label>
                                     </div>
 
                                     {filters.map((section) => (
@@ -209,7 +224,7 @@ const Filter = ({ products }) => {
                 {/* Filters */}
                 <form className="hidden lg:block flex-1 min-w-[250px] max-w-sm">
                     <h3 className='text-base leading-5 mb-5'>Filter Templates</h3>
-                    <label className="text-sm text-[#999] py-4">
+                    <label className="text-sm text-[#999] py-2 block">
                         <input
                             type="checkbox"
                             checked={selectedCategory.length === 0 || selectedCategory.includes('All')}
@@ -218,6 +233,26 @@ const Filter = ({ products }) => {
 
                         />
                         All
+                    </label>
+                    <label className="text-sm text-[#999] py-2 block">
+                        <input
+                            type="checkbox"
+                            checked={selectedCategory.includes('Components')}
+                            onChange={() => toggleCategorySelection('Components')}
+                            className="mr-3 h-4 w-4 rounded border-gray-200 dark:border-[#ffffff1a] text-indigo-600 focus:ring-indigo-500"
+
+                        />
+                        Components
+                    </label>
+                    <label className="text-sm text-[#999] py-2 block">
+                        <input
+                            type="checkbox"
+                            checked={selectedCategory.includes('Templates')}
+                            onChange={() => toggleCategorySelection('Templates')}
+                            className="mr-3 h-4 w-4 rounded border-gray-200 dark:border-[#ffffff1a] text-indigo-600 focus:ring-indigo-500"
+
+                        />
+                        Full Templates
                     </label>
                     {filters.map((section) => (
                         <Disclosure as="div" key={section.id} className="border-b border-gray-200 dark:border-[#ffffff1a] py-6" defaultOpen={section.id == "UseCase"}>
