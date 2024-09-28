@@ -1,12 +1,12 @@
 
 import Link from 'next/link';
-import CardContent from '../../(main)/templates/CardContent';
-import Container from '../Container';
+import CardContent from '../../../(main)/templates/CardContent';
+import Container from '../../Container';
 
 import { SanityDocument } from "next-sanity"
 
-import { sanityFetch } from "../../../../sanity/lib/fetch"
-import { FEATURED_QUERY } from "../../../../sanity/lib/queries"
+import { sanityFetch } from "../../../../../sanity/lib/fetch"
+import { FEATURED_QUERY } from "../../../../../sanity/lib/queries"
 import { Key } from 'react';
 
 async function getData() {

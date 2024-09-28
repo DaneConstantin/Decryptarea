@@ -1,16 +1,17 @@
 import { QueryParams, SanityDocument } from "next-sanity"
 import { notFound } from "next/navigation"
 
-import { ALLPRODUCTS_QUERY, PRODUCT_QUERY } from "../../../../../sanity/lib/queries"
+import { ALLGUIDES_QUERY, GUIDE_QUERY } from "../../../../../sanity/lib/queries"
 
 
 import { sanityFetch } from "../../../../../sanity/lib/fetch"
-import Product from "../SingleProduct"
+
+import Guide from "./SingleGuide"
 
 
 export async function generateStaticParams() {
     const posts = await sanityFetch<SanityDocument[]>({
-        query: ALLPRODUCTS_QUERY,
+        query: ALLGUIDES_QUERY,
 
     })
 
@@ -20,9 +21,9 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: QueryParams }) {
-    const post = await sanityFetch<SanityDocument>({ query: PRODUCT_QUERY, params })
+    const post = await sanityFetch<SanityDocument>({ query: GUIDE_QUERY, params })
     if (!post) {
         return notFound()
     }
-    return <Product post={post} />
+    return <Guide post={post} />
 }

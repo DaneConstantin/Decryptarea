@@ -3,12 +3,12 @@ import './previewCSS.css';
 import PreviewFrame from './IFrameSetup'
 import { QueryParams, SanityDocument } from "next-sanity"
 import { notFound } from "next/navigation"
-import { POSTS_QUERY, POST_QUERY } from "../../../../../../sanity/lib/queries"
+import { ALLPRODUCTS_QUERY, PRODUCT_QUERY } from "../../../../../../sanity/lib/queries"
 import { sanityFetch } from "../../../../../../sanity/lib/fetch"
 
 export async function generateStaticParams() {
     const post = await sanityFetch<SanityDocument[]>({
-        query: POSTS_QUERY,
+        query: ALLPRODUCTS_QUERY,
 
     })
 
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 export default async function Preview({ params }: { params: QueryParams }) {
 
-    const post = await sanityFetch<SanityDocument>({ query: POST_QUERY, params })
+    const post = await sanityFetch<SanityDocument>({ query: PRODUCT_QUERY, params })
     if (!post) {
         return notFound()
     }

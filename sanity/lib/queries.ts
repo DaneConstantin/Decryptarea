@@ -4,17 +4,17 @@ import { groq } from "next-sanity";
 
 export const FEATURED_QUERY = groq`*[_type == "product" && featured == true]`;
 
+export const FEATURED_GUIDES = groq`*[_type == "guides" && featured == true]`;
+
+
 // export const FEATURED_COMPONENT_QUERY = groq`*[_type == "component" && defined(productCategory) && productCategory->slug.current == 'component']`;
 
 export const CURATED_NEWS = groq`*[_type == 'newsArticles' && defined(link)]`;
 
-export const ALLPRODUCTS_QUERY = groq`*[_type == 'product']`;
+export const ALLPRODUCTS_QUERY = groq`*[_type == 'product' && defined(slug)]`;
+export const PRODUCT_QUERY = groq`*[_type == "product" && slug.current == $slug][0]`;
 
 
-export const POSTS_QUERY = groq`*[_type == "product" && defined(slug)]`;
+export const ALLGUIDES_QUERY = groq`*[_type == 'guides' && defined(slug)]`;
+export const GUIDE_QUERY = groq`*[_type == "guides" && slug.current == $slug][0]`;
 
-export const POST_QUERY = groq`*[_type == "product" && slug.current == $slug][0]`;
-
-export const COMPONENTS_QUERY = groq`*[_type == "component" && defined(slug)]`;
-
-export const COMPONENT_QUERY = groq`*[_type == "component" && slug.current == $slug][0]`;

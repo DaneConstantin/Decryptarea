@@ -1,8 +1,9 @@
 
 import Hero from "../reusableComponents/homepageElements/Hero";
-import FeaturedTemplates from "../reusableComponents/homepageElements/FeaturedTemplates";
-import ContactSection from "../reusableComponents/homepageElements/ContactSection";
-import HomeWidget from "../reusableComponents/homepageElements/HomeWidget";
+import FeaturedTemplates from "../reusableComponents/homepageElements/TemplateSection/FeaturedTemplates";
+import ContactSection from "../reusableComponents/homepageElements/ContactSection/ContactSection";
+import HomeWidget from "../reusableComponents/homepageElements/NewsSection/NewsWidget";
+import GuidesWidget from "../reusableComponents/homepageElements/GuideSection/GuidesWidget";
 
 export default function Home() {
 
@@ -18,7 +19,7 @@ export default function Home() {
       </header>
       <HomeWidget />
       <FeaturedTemplates />
-
+      <GuidesWidget />
 
       <ContactSection />
 

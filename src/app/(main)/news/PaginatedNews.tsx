@@ -22,8 +22,8 @@ interface PaginatedNewsProps {
 const formatDate = (dateString: string | number | Date) => {
     const date = new Date(dateString);
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
-    
-    return date.toLocaleDateString('en-GB', options); // 'en-GB' gives day month year format
+
+    return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
 };
 
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import PreviewButton from '../../reusableComponents/homepageElements/PreviewButton';
-import DownloadButton from '../../reusableComponents/homepageElements/DownloadButton';
+import PreviewButton from '../../reusableComponents/homepageElements/TemplateSection/PreviewButton';
+import DownloadButton from '../../reusableComponents/homepageElements/TemplateSection/DownloadButton';
 import CardImage from './CardImage';
 import { SanityDocument } from 'next-sanity';
 
 export default function CardContent({ propu }: { propu: SanityDocument }) {
     const { title, mainImage, description, buyLink, slug } = propu || {};
- 
+
     return (
         <div className='flex flex-col gap-4 max-w-xs md:max-w-md'>
             <div className="w-full mx-auto h-auto rounded-xl shadow cursor-pointer bg-white bg-gradient-to-b dark:from-[#131415] dark:to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33] hover:shadow-md">

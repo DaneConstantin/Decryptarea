@@ -4,11 +4,9 @@ import imageUrlBuilder from "@sanity/image-url"
 import { SanityDocument } from "next-sanity"
 import Link from "next/link";
 import { GoArrowLeft } from "react-icons/go";
-import { Fragment } from "react";
 import { IoIosArrowForward } from "react-icons/io";
-import NextBreadcrumb from "../../reusableComponents/NextBreadcrumb";
-import PreviewButton from "../../reusableComponents/homepageElements/TemplateSection/PreviewButton";
-import DownloadButton from "../../reusableComponents/homepageElements/TemplateSection/DownloadButton";
+import NextBreadcrumb from "@/app/reusableComponents/NextBreadcrumb";
+
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
@@ -16,8 +14,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
 const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
 
-export default function Product({ post }: { post: SanityDocument }) {
-    const { title, mainImage, description, content, buyLink, integration, pricing, compatibility, useCase, slug } = post;
+export default function Guide({ post }: { post: SanityDocument }) {
+    const { title, mainImage, description, body  } = post;
     return (
         <main className="container max-w-7xl mx-auto  mt-[100px]">
             <NextBreadcrumb
@@ -44,7 +42,7 @@ export default function Product({ post }: { post: SanityDocument }) {
                         ) : null}
                     </div>
 
-                    {content ? <PortableText value={content} /> : null}
+                    {body ? <PortableText value={body} /> : null}
                 </div>
 
                 <div id="details" className="flex flex-col gap-4 w-full lg:w-1/3 p-6 pl-12 lg:sticky top-[65px] max-h-[420px] ">
@@ -56,38 +54,7 @@ export default function Product({ post }: { post: SanityDocument }) {
 
                     {description ? <p className="text-[#666]">{description}</p> : null}
 
-                    <div className="flex justify-center">
-                        <PreviewButton link={`/templates/${slug.current}/preview`} />
-                        <DownloadButton link={buyLink} />
-                    </div>
-                    <table className="table-auto border-collapse border-gray-200 dark:border-[#ffffff1a]">
-                        <tbody>
-                            <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
-                                <th className="text-left">Compatibility</th>
-                                <td className="text-right">
-                                    {compatibility}
-                                </td>
-                            </tr>
-                            <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
-                                <th className="text-left">Use Case</th>
-                                <td className="text-right">
-                                    {useCase}
-                                </td>
-                            </tr>
-                            <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
-                                <th className="text-left">Pricing</th>
-                                <td className="text-right">
-                                    {pricing}
-                                </td>
-                            </tr>
-                            <tr className="leading-10">
-                                <th className="text-left">Integration</th>
-                                <td className="text-right">
-                                    {integration}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  
 
 
                 </div>

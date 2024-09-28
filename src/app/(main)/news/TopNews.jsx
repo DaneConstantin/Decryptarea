@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ReadFullButton from '../../reusableComponents/homepageElements/ReadFullButton';
+import ReadFullButton from '../../reusableComponents/homepageElements/NewsSection/ReadFullButton';
 import Image from 'next/image';
 import { fetchNewsWithSanity } from '../../utils/fetchSanity';
 import DescriptionText from './DescriptionText';
@@ -9,7 +9,7 @@ import DescriptionText from './DescriptionText';
 const formatDate = (dateString) => {
     const date = new Date(dateString);
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
-    return date.toLocaleDateString('en-GB', options); // 'en-GB' gives day month year format
+    return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
 };
 
 export default async function TopNews() {
@@ -17,7 +17,7 @@ export default async function TopNews() {
     const sortedArticles = articles.sort((a, b) => {
         return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
     });
-    
+
     return (
         <div className="lg:flex lg:-mx-6">
             <div className="lg:w-3/5 lg:px-6">

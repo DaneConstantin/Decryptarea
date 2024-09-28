@@ -31,7 +31,7 @@ export default function Hero() {
           <h1 className="my-8 text-3xl font-bold text-gray-800 md:text-5xl dark:text-gray-100">Decrypt the Future</h1>
 
           <div>
-            <p className="max-w-md mx-auto my-4 text-base text-[#999] font-normal md:leading-relaxed  dark:text-gray-400 text-center">
+            <p className="max-w-lg mx-auto my-4 text-base text-[#999] font-normal md:leading-relaxed  dark:text-gray-400 text-center">
               Cutting-edge Web3 resources, blockchain insights, cryptocurrency news. Explore, learn, and build the decentralized future.
             </p>
           </div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from '../Container'
+import Container from '../../Container'
 import Link from 'next/link'
-import TopNews from "../../(main)/news/TopNews"
+import TopNews from "../../../(main)/news/TopNews"
 
-const HomeWidget = () => {
+const NewsWidget = () => {
     return (
         <section className="bg-white dark:bg-primary-dark ">
             <Container className="py-8 xl:px-5 px-4 md:px-8 mx-auto max-w-[1440px] ">
@@ -39,4 +39,4 @@ const HomeWidget = () => {
     )
 }
 
-export default HomeWidget
+export default NewsWidget
