@@ -14,7 +14,7 @@ interface PaginatedNewsProps {
         pubDate: string;
         category: string;
         description: string;
-        image: string | null;
+        image: string;
     }[];
 }
 // Helper function to format date
@@ -58,7 +58,7 @@ const PaginatedNews: React.FC<PaginatedNewsProps> = ({ matchingArticles }) => {
             />
             <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 {selectedArticles.map((article, index) => {
-                    const imageUrl = article.image ? article.image : null;
+                    const imageUrl = article.image ? article.image : "https://via.placeholder.com/550";
 
 
                     return (

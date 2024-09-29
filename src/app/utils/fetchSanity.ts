@@ -17,9 +17,9 @@ interface Article {
   title: string;
   link: string;
   pubDate: string;
-  category: string | null;
+  category: string;
   description: string;
-  image: string | null;
+  image: string;
   creator: string;
 }
 
@@ -80,7 +80,7 @@ export async function fetchNewsWithSanity() {
         pubDate: post.pubDate[0],
         category: matchedTitle ? matchedTitle.personalCategory : null, // Assign category if match found
         description: post.description[0], // Assuming description is also an array
-        image: post['media:content'] && post['media:content'][0] ? post['media:content'][0].url[0] : null,
+        image: post['media:content'] && post['media:content'][0].url[0],
         creator: post['dc:creator'] ? post['dc:creator'][0] : post.author ? post.author[0] : 'Unknown Author', // Extract creator if available
       };
 
