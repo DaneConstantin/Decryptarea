@@ -1,5 +1,3 @@
-import { Key } from "react";
-
 interface CategoryFilterProps {
     categories: string[];
     selectedCategory: string;

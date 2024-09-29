@@ -1,7 +1,6 @@
 // PaginatedNews.jsx
 'use client'
 import React, { useState } from 'react';
-import { SanityDocument } from "next-sanity";
 import CategoryFilter from './CategoryFilter';
 import DescriptionText from './DescriptionText'; // Import DescriptionText if needed
 import Image from 'next/image'; // Import the Image component from Next.js
@@ -21,7 +20,11 @@ interface PaginatedNewsProps {
 // Helper function to format date
 const formatDate = (dateString: string | number | Date) => {
     const date = new Date(dateString);
-    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    const options: Intl.DateTimeFormatOptions = {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    };
 
     return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
 };

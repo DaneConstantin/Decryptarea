@@ -4,7 +4,6 @@ import imageUrlBuilder from "@sanity/image-url"
 import { SanityDocument } from "next-sanity"
 import Link from "next/link";
 import { GoArrowLeft } from "react-icons/go";
-import { Fragment } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import NextBreadcrumb from "../../reusableComponents/NextBreadcrumb";
 import PreviewButton from "../../reusableComponents/homepageElements/TemplateSection/PreviewButton";

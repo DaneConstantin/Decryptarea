@@ -1,9 +1,27 @@
-// src/utils/fetchNewsWithSanity.ts
-
 import { fetchRssFeed } from './fetchRssFeed'; // Import the fetch function
 import { SanityDocument } from "next-sanity";
 import { sanityFetch } from "../../../sanity/lib/fetch";
 import { CURATED_NEWS } from "../../../sanity/lib/queries";
+
+interface RssPost {
+  author?: string[];
+  'dc:creator'?: string[];
+  'media:content': { url: string[] }[];
+  description: string[];
+  pubDate: string[];
+  title: string[];
+  link: string[];
+}
+
+interface Article {
+  title: string;
+  link: string;
+  pubDate: string;
+  category: string | null;
+  description: string;
+  image: string | null;
+  creator: string;
+}
 
 async function getSanityTitles() {
   const featured = await sanityFetch<SanityDocument[]>({
@@ -40,7 +58,7 @@ export async function fetchNewsWithSanity() {
   const rssPostsArray = await Promise.all(urls.map(url => fetchRssFeed(url)));
 
   // Flatten the array of posts
-  const rssPosts = rssPostsArray.flat();
+  const rssPosts: RssPost[] = rssPostsArray.flat();
 
   // Fetch Sanity titles
   const sanityTitles = await getSanityTitles();
@@ -49,22 +67,14 @@ export async function fetchNewsWithSanity() {
   const sanityLinksSet = new Set(sanityTitles.map(title => title.link));
 
   // Create a new array of articles enriched with categories
-  const matchingArticles = rssPosts
-    .filter((post: { link: any[] }) => sanityLinksSet.has(post.link[0])) // Filter based on Sanity links
-    .map((post: {
-      author?: any;
-      'dc:creator'?: any[];
-      'media:content': any[];
-      description: any;
-      pubDate: any;
-      title: any;
-      link: any[];
-    }) => {
+  const matchingArticles: Article[] = rssPosts
+    .filter((post: RssPost) => sanityLinksSet.has(post.link[0])) // Filter based on Sanity links
+    .map((post: RssPost) => {
       // Find the matching Sanity title
       const matchedTitle = sanityTitles.find((title) => title.link === post.link[0]);
 
       // Construct the article object
-      const article = {
+      const article: Article = {
         title: post.title[0], // Assuming title is an array
         link: post.link[0],
         pubDate: post.pubDate[0],

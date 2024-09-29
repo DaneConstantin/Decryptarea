@@ -1,17 +1,15 @@
 import React from 'react';
-
-import { SanityDocument } from 'next-sanity';
 import Link from 'next/link';
 import StaticCardImage from './StaticCardImage';
 
 // Helper function to format date
-const formatDate = (dateString: string | number | Date) => {
+const formatDate = (dateString) => {
     const date = new Date(dateString);
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
     return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
 };
 
-export default function FeaturedArticle({ propu }: { propu: SanityDocument }) {
+export default function FeaturedArticle({ propu }) {
     const { title, mainImage, _updatedAt, slug } = propu || {};
 
     return (
