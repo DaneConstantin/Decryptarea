@@ -40,7 +40,7 @@ export default function FooterMenu() {
                 <div className="place-content-start items-start flex flex-auto flex-col gap-16 min-h-min-content overflow-hidden p-0 relative w-full">
                     <div className="flex flex-col gap-4">
                         <p className="text-md leading-tight dark:text-gray-100">Did one of my components or templates helped you?<br></br> Kindly support me:</p>
-                        <Link href="https://www.buymeacoffee.com/madeui" target="_blank" className="flex items-center w-52 h-14 bg-yellow-400 text-black rounded-lg border border-transparent p-2 text-base tracking-wider shadow-sm hover:shadow-md opacity-85">
+                        <Link href="https://www.buymeacoffee.com/Dcoder" target="_blank" className="flex items-center w-52 h-14 bg-yellow-400 text-black rounded-lg border border-transparent p-2 text-base tracking-wider shadow-sm hover:shadow-md opacity-85">
                             <Image src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
                                 height={0}
                                 width={0}

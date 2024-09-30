@@ -10,7 +10,7 @@ export default function ContactCard() {
 
                 <div className="relative rounded-full aspect-square shadow-sm  w-20 h-20">
                     <Link href="https://x.com/ethicoder" className="absolute w-20 h-20" target="_blank">
-                        <Image src="/img/Xpro.png" className="w-full h-full rounded-full" alt="Twitter Profile image"
+                        <Image src="/img/DCoderX.png" className="w-full h-full rounded-full" alt="Twitter Profile image"
                         fill
                     />
                     </Link>

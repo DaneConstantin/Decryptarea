@@ -25,7 +25,7 @@ export default async function FeaturedTemplates() {
   }
 
   return (
-    <section className="bg-white dark:bg-primary-dark border-y-[1px] border-gray-200 dark:border-[#ffffff1a]">
+    <section className="border-y-[1px] border-gray-200 dark:border-[#ffffff1a]">
       <Container className="py-8 max-w-screen-xl xl:px-5 px-4 md:px-8">
 
 

@@ -30,30 +30,31 @@ const NavLinks = () => {
                             <li className="row-span-3 grid">
                                 <NavigationMenu.Link asChild>
                                     <a
-                                        className="focus:shadow-violet7 from-purple9 to-indigo9 flex
+                                        className="focus:shadow-violet7 from-purple-700 to-purple-900 flex
                     h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
-                                        href="/"
+                                        href="/news"
                                     >
 
                                         <div className="mt-4 mb-[7px] text-[18px] font-medium leading-[1.2] text-white">
                                             Curated News by category
                                         </div>
                                         <p className="text-mauve4 text-[14px] leading-[1.3]">
-                                            Easy to read - TL;DR versions
+
                                         </p>
                                     </a>
                                 </NavigationMenu.Link>
                             </li>
 
-                            <ListItem href="https://stitches.dev/" title="Tech News">
-                                Blockchain programming and related
+                            <ListItem href="/news?category=innovation" title="Innovation">
+                                New technologies and projects in blockchain and Web3
                             </ListItem>
-                            <ListItem href="/colors" title="Crypto">
-                                Top News from crypto space
+                            <ListItem href="/news?category=market" title="Market Insights">
+                                Market trends and analysis in crypto
                             </ListItem>
-                            <ListItem href="https://icons.radix-ui.com/" title="Business & Political">
-                                Top Political and business news from around the globe
+                            <ListItem href="/news?category=regulatory" title="Regulatory Updates">
+                                Legal developments and government policies
                             </ListItem>
+
                         </ul>
                     </NavigationMenu.Content>
                 </NavigationMenu.Item>
@@ -70,9 +71,9 @@ const NavLinks = () => {
                             <li className="row-span-3 grid">
                                 <NavigationMenu.Link asChild>
                                     <div
-                                        className="focus:shadow-violet7 from-purple9 to-indigo9 flex
+                                        className="focus:shadow-violet7 from-purple-700 to-purple-900 flex
                     h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
-                                       
+
                                     >
 
                                         <div className="mt-4 mb-[7px] text-[18px] font-medium leading-[1.2] text-white">
@@ -110,7 +111,7 @@ const NavLinks = () => {
                             <li className="row-span-3 grid">
                                 <NavigationMenu.Link asChild>
                                     <a
-                                        className="focus:shadow-violet7 from-purple9 to-indigo9 flex
+                                        className="focus:shadow-violet7 from-purple-700 to-purple-900 flex
                     h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
                                         href="/"
                                     >
@@ -119,7 +120,7 @@ const NavLinks = () => {
                                             Audit
                                         </div>
                                         <p className="text-mauve4 text-[14px] leading-[1.3]">
-                                            Audit your project here
+                                            Soon
                                         </p>
                                     </a>
                                 </NavigationMenu.Link>
@@ -128,7 +129,7 @@ const NavLinks = () => {
                             <li className="row-span-3 grid">
                                 <NavigationMenu.Link asChild>
                                     <a
-                                        className="focus:shadow-violet7 from-purple9 to-indigo9 flex
+                                        className="focus:shadow-violet7 from-purple-700 to-purple-900 flex
                     h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
                                         href="/"
                                     >
@@ -137,7 +138,7 @@ const NavLinks = () => {
                                             Development
                                         </div>
                                         <p className="text-mauve4 text-[14px] leading-[1.3]">
-                                            Development Services here
+                                            Web2 + Web3 Full Stack Development
                                         </p>
                                     </a>
                                 </NavigationMenu.Link>

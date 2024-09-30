@@ -13,7 +13,7 @@ async function getData() {
   const featured = await sanityFetch<SanityDocument[]>({
     query: FEATURED_GUIDES,
   });
-  console.log(featured, "here");
+
   return featured;
 
 }
@@ -23,7 +23,7 @@ export default async function GuidesWidget() {
   if (!data || data.length === 0) {
     return <section>No data </section>;
   }
-  console.log(data);
+
   return (
     <section className="bg-white dark:bg-primary-dark border-b-[1px] border-gray-200 dark:border-[#ffffff1a]">
       <Container className="py-8 max-w-screen-xl xl:px-5 px-4 md:px-8">
