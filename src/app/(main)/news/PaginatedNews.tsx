@@ -35,7 +35,7 @@ const PaginatedNews: React.FC<PaginatedNewsProps> = ({ matchingArticles }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const articlesPerPage = 6;
 
-    const categories = Array.from(new Set(matchingArticles.map(article => article.category)));
+    const categories = ["market", "regulatory", "innovation"]
 
     // Filter articles based on selected category
     const filteredArticles = selectedCategory

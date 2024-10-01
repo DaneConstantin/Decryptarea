@@ -2,13 +2,14 @@ import React from 'react'
 import Container from '../../Container'
 import Link from 'next/link'
 import TopNews from "../../../(main)/news/TopNews"
+import { MdInfo } from "react-icons/md";
 
 const NewsWidget = () => {
     return (
         <section className="bg-white dark:bg-primary-dark ">
             <Container className="py-8 xl:px-5 px-4 md:px-8 mx-auto max-w-[1440px] ">
-                <div className="flex justify-left items-end gap-4 mb-8">
-                    <h2>Recent News</h2>
+                <div className="flex justify-left items-center gap-4">
+                    <h2 className='text-xl font-bold'>Top News</h2>
                     <div className="flex flex-initial shrink-0  w-5 h-5 z-10 relative text-[#999] hover:text-black dark:hover:text-[#f0f0f0]">
                         <Link
                             href="/news" className='text-sm flex whitespace-nowrap'
@@ -30,6 +31,10 @@ const NewsWidget = () => {
 
 
 
+                </div>
+                <div className='flex items-center text-[#999] mt-4 mb-6'>
+                    <MdInfo size={22} />
+                    <p className='text-sm ml-2 max-w-3xl'>Manually curated news on <b>industry movements</b>, significant <b>regulatory changes</b>, and <b>major developments</b> that could shape the future trajectory of the Web3 space. All links are external.</p>
                 </div>
                 <TopNews />
             </Container>

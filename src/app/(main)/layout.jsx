@@ -37,13 +37,14 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Decryptarea is your all-in-one Web3 platform offering cutting-edge templates for dApps and NFTs, insightful blogs, a comprehensive Web3 news aggregator, and expert consulting services. Empower your blockchain projects with the tools and guidance you need to thrive in the decentralized future." />
         <meta name="keywords" content="Web3 Templates, dApps, NFTs, News, & Consulting Services" />
         <title>Web3 Templates, dApps, NFTs, News, & Consulting Services</title>
-        
+
       </Head>
       <body className={`min-h-screen bg-[#f9f9f9] dark:text-[#f0f0f0] dark:bg-primary-dark transition duration-300 flex flex-col ${inter.className}`} id="root" >
         <AppHeader />
 
-        {children}
-
+        
+          {children}
+       
         <Footer />
         <UseScrollToTop />
         {/* <SpeedInsights /> */}

@@ -7,6 +7,7 @@ interface RssPost {
   author?: string[];
   'dc:creator'?: string[];
   'media:content': { url: string[] }[];
+  'media:thumbnail': { url: string[] }[];
   description: string[];
   pubDate: string[];
   title: string[];
@@ -52,6 +53,13 @@ export async function fetchNewsWithSanity() {
     'https://cointelegraph.com/rss/tag/regulation',
     'https://cointelegraph.com/rss/category/in-depth',
     'https://www.coindesk.com/arc/outboundfeeds/rss/',
+    //below this are the verified ones
+    'https://thedefiant.io/api/feed',
+    'https://www.theblock.co/rss.xml',
+    'https://nftnewstoday.com/feed/',
+    'https://www.newsbtc.com/feed/',
+    'https://decrypt.co/feed',
+
   ];
 
   // Fetch all RSS posts concurrently
@@ -80,7 +88,7 @@ export async function fetchNewsWithSanity() {
         pubDate: post.pubDate[0],
         category: matchedTitle ? matchedTitle.personalCategory : null, // Assign category if match found
         description: post.description[0], // Assuming description is also an array
-        image: post['media:content'] && post['media:content'][0].url[0],
+        image: post['media:content'] && post['media:content'][0].url[0] || post['media:thumbnail'][0].url[0],
         creator: post['dc:creator'] ? post['dc:creator'][0] : post.author ? post.author[0] : 'Unknown Author', // Extract creator if available
       };
 

@@ -42,7 +42,7 @@ export default async function TopNews() {
             <div className="mt-8 lg:w-2/5 lg:mt-0">
 
                 <div className="lg:px-6 border-[1px] border-gray-200 dark:border-[#ffffff1a] rounded-xl py-4 ">
-                    <h4 className='mb-6 text-2xl font-bold'>The Latest</h4>
+                    <h3 className='mb-6 text-lg font-semibold'>Latest</h3>
                     { }
                     {sortedArticles.slice(1, 4).map((post, index) => (
                         <div key={post.link}>
