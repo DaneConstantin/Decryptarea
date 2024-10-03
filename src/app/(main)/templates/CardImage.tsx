@@ -15,7 +15,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
 const CardImage = ({ previewImg, slug }: { previewImg: string, slug: string }) => {
     const [scroll, setScroll] = useState(false);
     return (
-        <div className="flex h-[350px] w-auto rounded-xl mb-0 m-3 md:m-5 md:mb-0">
+        <div className="flex h-[250px] w-auto rounded-xl m-3 md:m-5">
             <div className="w-full h-auto overflow-hidden">
                 <div className="relative w-full h-full">
                     <Link href={`/templates/${slug}`}>
@@ -28,8 +28,7 @@ const CardImage = ({ previewImg, slug }: { previewImg: string, slug: string }) =
                                 alt="Template preview image"
                                 style={{
                                     objectFit: "cover", objectPosition: "top",
-                                    transform: scroll ? `translateY(-100px)` : "translateY(0%)",
-                                    transition: "transform 1.5s ease-out",
+
 
                                 }}
                                 onMouseEnter={() => setScroll(true)}

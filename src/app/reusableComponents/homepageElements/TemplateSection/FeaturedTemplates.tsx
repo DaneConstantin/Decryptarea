@@ -31,7 +31,7 @@ export default async function FeaturedTemplates() {
 
 
         <div className="flex justify-left items-end gap-4">
-          <h2>Full Templates</h2>
+          <h2>Templates</h2>
           <div className="flex flex-initial shrink-0  w-5 h-5 z-10 relative text-[#999] hover:text-black dark:hover:text-[#f0f0f0]">
             <Link
               href="/templates" className='text-sm flex whitespace-nowrap'

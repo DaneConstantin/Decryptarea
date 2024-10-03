@@ -14,7 +14,7 @@ const Buttons = () => {
 
       </Link>
 
-      <Link className="rounded-full border border-[#ffffff1a] text-white border-gray-300 dark:border-purple-700 bg-gradient-to-br from-purple-700 to-purple-800 p-3 px-6 text-sm leading-normal  shadow-sm hover:border-[#ececec] dark:hover:border-purple-900 hover:to-purple-900" href="/components">
+      <Link className="rounded-full border border-[#ffffff1a] text-white border-gray-300 dark:border-purple-700 bg-gradient-to-br from-purple-700 to-purple-800 p-3 px-6 text-sm leading-normal  shadow-sm hover:border-[#ececec] dark:hover:border-purple-900 hover:to-purple-900" href="/templates">
         <LuShoppingBag className="inline mr-2 h-5 w-5" />
         <span className='text-sm leading-normal'>Browse Templates</span>
       </Link>

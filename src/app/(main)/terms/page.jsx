@@ -74,7 +74,7 @@ const TermsAndConditions = () => {
                 <h2 className="text-2xl  font-extrabold my-4">Support</h2>
                 <p className='mb-4 text-lg'>DecryptArea provides support for any customers.</p>
                 <p className='mb-4 text-lg'>Support for a purchase is governed by the usage license stated in the Terms stated above</p>
-                <p className='mb-4 text-lg'>Support is valid from the date of purchase and all inquiries should be directed to <Link href="mailto:contact@DecryptArea.com" className="text-blue-500 hover:underline">contact@DecryptArea.com</Link></p>
+                <p className='mb-4 text-lg'>Support is valid from the date of purchase and all inquiries should be directed to <Link href="mailto:contact@decryptarea.com" className="text-blue-500 hover:underline">contact@decryptarea.com</Link></p>
             </section>
             <hr className='my-8' />
             <section>
@@ -82,7 +82,7 @@ const TermsAndConditions = () => {
                 <p className='mb-4 text-lg'>DecryptArea may modify this agreement at any time. Continued use of DecryptArea.com signifies acceptance of these changes.</p>
             </section>
 
-            <p className='mb-4 text-lg'>If you have any questions, please contact us at <Link href="mailto:contact@DecryptArea.com" className="text-blue-500 hover:underline">contact@DecryptArea.com</Link></p>
+            <p className='mb-4 text-lg'>If you have any questions, please contact us at <Link href="mailto:contact@decryptarea.com" className="text-blue-500 hover:underline">contact@decryptarea.com</Link></p>
         </div >
     );
 };

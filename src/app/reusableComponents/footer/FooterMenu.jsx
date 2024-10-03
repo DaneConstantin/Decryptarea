@@ -20,7 +20,7 @@ const productLinks = [
 const infoLinks = [
     { href: '/faq', text: 'FAQ' },
     { href: '/terms', text: 'Terms & License Agreement' },
-    { href: '/privacy-policy', text: 'Privacy Policy' }
+    { href: '/privacy', text: 'Privacy Policy' }
 ];
 
 
