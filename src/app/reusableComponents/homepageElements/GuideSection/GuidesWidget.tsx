@@ -30,8 +30,8 @@ export default async function GuidesWidget() {
 
 
 
-        <div className="flex justify-left items-end gap-4">
-          <h2>Guides</h2>
+        <div className="flex justify-left items-center gap-4">
+          <h2 className='text-xl font-bold'>Guides</h2>
           <div className="flex flex-initial shrink-0  w-5 h-5 z-10 relative text-[#999] hover:text-black dark:hover:text-[#f0f0f0]">
             <Link
               href="/guides" className='text-sm flex whitespace-nowrap'

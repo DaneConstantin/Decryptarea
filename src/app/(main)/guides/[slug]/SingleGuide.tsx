@@ -32,7 +32,7 @@ export default function Guide({ post }: { post: SanityDocument }) {
                     <div className="relative w-full h-screen">
                         {mainImage ? (
                             <Image
-                                className="float-left m-0 mr-4 rounded-lg"
+                                className="m-0 mr-4 rounded-lg"
                                 src={urlFor(mainImage).quality(90).url()}
                                 fill
                                 style={{ objectFit: "cover", objectPosition: "top" }}

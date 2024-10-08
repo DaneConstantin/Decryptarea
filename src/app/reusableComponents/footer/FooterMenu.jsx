@@ -9,7 +9,7 @@ const LinkItem = ({ href, text }) => (
 
 const aboutMe = [
     { href: '/contact', text: 'Contact Me' },
-    { href: '#', text: 'Hire me' },
+    // { href: '#', text: 'Hire me' },
 ];
 
 const productLinks = [
@@ -18,7 +18,7 @@ const productLinks = [
     { href: '/templates', text: 'Landing Pages' },
 ];
 const infoLinks = [
-    { href: '/faq', text: 'FAQ' },
+    // { href: '/faq', text: 'FAQ' },
     { href: '/terms', text: 'Terms & License Agreement' },
     { href: '/privacy', text: 'Privacy Policy' }
 ];
@@ -34,7 +34,7 @@ export default function FooterMenu() {
 
 
                 </Link>
-                <p className='text-xs py-2'>Next-Gen Templates for Speedy Development </p>
+                <p className='text-xs py-2'>Build Smarter, Launch Faster in Web3 </p>
             </div>
             <div className="flex flex-col md:flex-row gap-10 mt-10">
                 <div className="place-content-start items-start flex flex-auto flex-col gap-16 min-h-min-content overflow-hidden p-0 relative w-full">

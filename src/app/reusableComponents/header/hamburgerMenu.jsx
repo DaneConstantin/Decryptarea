@@ -6,7 +6,7 @@ import { RxCaretDown } from "react-icons/rx";
 export default function HamburgerMenu() {
     const [showMenu, setShowMenu] = useState(false);
 
-    const [submenuOpen, setSubmenuOpen] = useState({ news: false, services: false });
+    const [submenuOpen, setSubmenuOpen] = useState({ news: false, services: false, guides: false });
 
     const toggleSubmenu = (key) => setSubmenuOpen(prev => ({ ...prev, [key]: !prev[key] }));
 
@@ -78,13 +78,28 @@ export default function HamburgerMenu() {
                                 News <RxCaretDown className={`${submenuOpen.news ? 'rotate-180' : ''} transition-transform`} />
                             </button>
                             <ul className={`${submenuOpen.news ? 'block' : 'hidden'} space-y-2 p-4`}>
-                                <li><a href="https://stitches.dev/" className="hover:underline">Tech News</a></li>
-                                <li><a href="/colors" className="hover:underline">Crypto</a></li>
-                                <li><a href="https://icons.radix-ui.com/" className="hover:underline">Business & Political</a></li>
+                                <li><a href="/news" className="hover:underline">All News</a></li>
+                                <li><a href="/news?category=innovation" className="hover:underline">Innovation</a></li>
+                                <li><a href="/news?category=market" className="hover:underline">Market Insights</a></li>
+                                <li><a href="/news?category=regulatory" className="hover:underline">Regulatory Updates</a></li>
+                            </ul>
+                        </li>
+                        {/* Guides Submenu for Mobile */}
+                        <li>
+                            <button
+                                className="w-full text-left text-primary-dark dark:text-white flex justify-between items-center"
+                                onClick={() => toggleSubmenu('guides')}
+                            >
+                                Guides <RxCaretDown className={`${submenuOpen.guides ? 'rotate-180' : ''} transition-transform`} />
+                            </button>
+                            <ul className={`${submenuOpen.guides ? 'block' : 'hidden'} space-y-2 p-4`}>
+                                <li><a href="/buy-crypto" className="hover:underline">Buy Cryptocurrencies</a></li>
+                                <li><a href="/cex-guide" className="hover:underline">Buy on centralized Exchanges</a></li>
+                                <li><a href="/dex-guide" className="hover:underline">Buy on decentralized Exchanges (DEXs)</a></li>
                             </ul>
                         </li>
 
-                        {/* Services Submenu for Mobile */}
+                        {/* Services Submenu for Mobile 
                         <li>
                             <button
                                 className="w-full text-left text-primary-dark dark:text-white flex justify-between items-center"
@@ -97,7 +112,7 @@ export default function HamburgerMenu() {
                                 <li><a href="/" className="hover:underline">Development</a></li>
                             </ul>
                         </li>
-
+                        */}
                         <li>
                             <a href="https://blog.decrypteria.com" className="text-primary-dark dark:text-white hover:underline">
                                 Blog

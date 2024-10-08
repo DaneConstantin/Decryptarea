@@ -3,9 +3,6 @@ import './previewCSS.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Figtree } from 'next/font/google';
-
-const figtree = Figtree({ subsets: ['latin'] })
 
 const PreviewFrame = ({ iFrameLink }) => {
     const [iframeWidth, setIframeWidth] = useState('100%');
@@ -32,16 +29,15 @@ const PreviewFrame = ({ iFrameLink }) => {
     };
 
     const isSmallOrMedium = iframeWidth !== '100%';
-
     return (
         <main className='min-h-screen'>
-            <div className="w-full px-5 bg-purple-900 border-b border-blue-500 z-10">
+            <div className="w-full px-5  border-b border-gray-400 z-10">
                 <nav className="flex items-center justify-between py-4">
                     <div className="justify-start flex items-center gap-4 flex-1">
                         <Link href="/" className="flex gap-2">
 
                             <Image src="/img/cryptostats.png" width={160} height={44} alt="Decryptarea logo" className="p-0.5 dark:invert" />
-                            <h1 className={`${figtree.className} font-sans text-2xl font-medium leading-none text-white `}>DecryptArea</h1>
+
                         </Link>
                     </div>
                     <div className="hidden w-max sm:flex sm:flex-col sm:align-center">
@@ -86,15 +82,25 @@ const PreviewFrame = ({ iFrameLink }) => {
                         </div>
                     </div>
                     <div className="flex items-center justify-end flex-1 gap-4 text-[#f0f0f0] text-sm leading-normal">
-                        <Link className="p-3 px-4 rounded-xl bg-gradient-to-b from-[#131415] to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33]" href="/templates/">
+                        <Link className="p-3 px-4 rounded-xl bg-gradient-to-b from-[#131415] to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33]" href={iFrameLink.buyLink}>
                             <span className="sm:hidden"> Download</span>
                             <span className="hidden sm:flex"> Download Template</span>
                         </Link>
-                        <Link href={iFrameLink} rel="noopener" className="text-gray-200 hover:text-gray-400" title="Close Frame">
+                        <div
+                            onClick={(e) => {
+                                e.preventDefault(); // Prevent default link behavior
+                                window.close(); // Attempt to close the current tab
+                            }}
+                            rel="noopener"
+                            className="text-gray-400 hover:text-gray-600 cursor-pointer"
+                            title="Close Frame"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" className="w-5 h-5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                        </Link>
+                        </div>
+
+
                     </div>
                 </nav>
             </div>
@@ -102,7 +108,7 @@ const PreviewFrame = ({ iFrameLink }) => {
                 <div className={isSmallOrMedium ? 'transition-all max-w-fit mx-auto duration-1000 translate-[0] overflow-hidden h-[calc(100vh-9rem)] flex justify-center border-[14px] border-gray-300 rounded-xl' : 'transition-all max-w-full mx-auto duration-1000 translate-[0] overflow-hidden h-[calc(100vh-5rem)] flex justify-center'}
                 >
                     <iframe
-                        src={iFrameLink}
+                        src={iFrameLink.previewLink}
 
                         className='transition-all duration-500 '
                         style={{ width: iframeWidth, height: iframeHeight }}

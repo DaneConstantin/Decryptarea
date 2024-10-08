@@ -22,8 +22,8 @@ export default function CopyRightAndLinks() {
                 <p className="text-sm text-gray-400">©{new Date().getFullYear()} DecryptArea. All rights reserved.</p>
             </div>
             <div className='flex space-x-4'>
-                <SocialLink href="https://t.me/" icon={ <FaTelegram size={35} />} label="Telegram" />
-                <SocialLink href="https://x.com/" icon={<TwitterIcon />} label="Twitter" />
+                <SocialLink href="https://t.me/dcoder0" icon={ <FaTelegram size={35} />} label="Telegram" />
+                <SocialLink href="https://x.com/ethicoder" icon={<TwitterIcon />} label="Twitter" />
             </div>
         </footer>
     );

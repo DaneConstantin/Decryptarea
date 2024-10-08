@@ -29,16 +29,16 @@ export default function Product({ post }: { post: SanityDocument }) {
             />
             <div className="flex flex-col-reverse lg:flex-row text-sm w-full">
 
-                <div id="description" className="flex flex-col p-8 pr-12 lg:border-r border-gray-200 dark:border-[#ffffff1a] prose prose-base w-full lg:w-2/3 lg:max-w-4xl  dark:prose-invert">
-                    <div className="relative w-full h-screen">
+                <div id="description" className="flex flex-col p-6 md:p-8 md:pr-12 lg:border-r border-gray-200 dark:border-[#ffffff1a] prose prose-base w-full lg:w-2/3 lg:max-w-4xl dark:prose-invert">
+                    <div className="relative w-full h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
                         {mainImage ? (
                             <Image
-                                className="float-left m-0 mr-4 rounded-lg"
+                                className="m-0 mr-4 rounded-lg"
                                 src={urlFor(mainImage).quality(90).url()}
-                                fill
-                                style={{ objectFit: "cover", objectPosition: "top" }}
+                                layout="fill" // Use layout="fill" for full coverage within the container
+                                objectFit="cover" // Ensures the image covers the entire container
+                                objectPosition="top" // Positions the image from the top
                                 alt={mainImage.alt || ""}
-
                             />
                         ) : null}
                     </div>
@@ -46,7 +46,8 @@ export default function Product({ post }: { post: SanityDocument }) {
                     {content ? <PortableText value={content} /> : null}
                 </div>
 
-                <div id="details" className="flex flex-col gap-4 w-full lg:w-1/3 p-6 pl-12 lg:sticky top-[65px] max-h-[420px] ">
+
+                <div id="details" className="flex flex-col gap-4 w-full lg:w-1/3 p-6 pl-12 lg:sticky top-[65px] lg:max-h-[420px] ">
                     <Link href='/templates' className="text-sm font-light hover:text-[#999]">
                         <GoArrowLeft style={{ "display": "inline", "marginRight": "4px" }} />
                         Back to Templates

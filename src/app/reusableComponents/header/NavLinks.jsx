@@ -85,20 +85,20 @@ const NavLinks = () => {
                                     </div>
                                 </NavigationMenu.Link>
                             </li>
-                            <ListItem href="/buy" title="Buy Cryptocurrencies">
+                            <ListItem href="/buy-crypto" title="Buy Cryptocurrencies">
                                 General Crypto Buying Guide
                             </ListItem>
-                            <ListItem href="" title="Centralized">
+                            <ListItem href="/cex-guide" title="Centralized">
                                 Buy on centralized Exchanges
                             </ListItem>
-                            <ListItem href="/colors" title="Decentralized">
+                            <ListItem href="/dex-guide" title="Decentralized">
                                 Buy on decentralized Exchanges (DEXs)
                             </ListItem>
 
                         </ul>
                     </NavigationMenu.Content>
                 </NavigationMenu.Item>
-                <NavigationMenu.Item>
+                {/* <NavigationMenu.Item>
                     <NavigationMenu.Trigger className="block text-left text-sm text-primary-dark leading-8 dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 pt-3 sm:pt-0 border-t-2 sm:border-t-0 border-primary-light dark:border-[#ffffff1a]">
                         Services{' '}
                         <RxCaretDown
@@ -148,7 +148,7 @@ const NavLinks = () => {
                         </ul>
                     </NavigationMenu.Content>
                 </NavigationMenu.Item>
-
+                */}
                 <NavigationMenu.Item>
                     <NavigationMenu.Link
                         className="block text-left text-sm text-primary-dark leading-8 dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 pt-3 sm:pt-0 border-t-2 sm:border-t-0 border-primary-light dark:border-[#ffffff1a]"

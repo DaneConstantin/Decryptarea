@@ -28,7 +28,7 @@ export default async function Preview({ params }: { params: QueryParams }) {
         return notFound()
     }
     return (
-        <PreviewFrame iFrameLink={post.previewLink} />
+        <PreviewFrame iFrameLink={post} />
     );
 }
 

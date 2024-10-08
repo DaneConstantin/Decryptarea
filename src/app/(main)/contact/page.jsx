@@ -27,7 +27,7 @@ export default function ContactPage() {
                   <h4 className="mb-1 text-xl font-bold dark:text-[#f0f0f0]">
                     Telegram
                   </h4>
-                  <Link target="_blank" href="https://t.me/" className="text-base text-indigo-500">
+                  <Link target="_blank" href="https://t.me/dcoder0" className="text-base text-indigo-500">
                    
                   </Link>
                 </div>

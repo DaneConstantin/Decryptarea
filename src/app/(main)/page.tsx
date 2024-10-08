@@ -21,7 +21,7 @@ export default function Home() {
       <HomeWidget />
       <FeaturedTemplates />
       <GuidesWidget />
-      <ServiceSection />
+      {/* <ServiceSection /> */}
       <ContactSection />
 
     </main >

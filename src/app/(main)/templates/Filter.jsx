@@ -303,7 +303,7 @@ const Filter = ({ products }) => {
 
                         </p>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full px-8" >
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full px-8 justify-items-center sm:justify-items-stretch" >
                             {filterProducts().map((template, index) => (
                                 <CardContent key={index} propu={template} />
                             ))

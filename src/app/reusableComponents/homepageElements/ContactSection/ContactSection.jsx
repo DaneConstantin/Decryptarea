@@ -5,11 +5,11 @@ import ContactCard from "./ContactCard";
 export default function ContactSection() {
 
   return (
-    <section id="contact" className="bg-white dark:bg-primary-dark border-t-[1px] border-gray-200 dark:border-[#ffffff1a]">
+    <section id="contact" className="container p-8 mx-auto  py-8 max-w-screen-xl xl:px-5 px-4 md:px-8">
       <Container className="py-8 max-w-screen-xl xl:px-5 px-4 md:px-8">
 
-        <div className="flex flex-col space-y-4">
-          <h2 className='text-md font-medium tracking-tight text-gray-800 dark:text-gray-100'>Contact</h2>
+        <div className="flex justify-left items-center gap-4">
+          <h2 className='text-xl font-bold'>Contact</h2>
 
         </div>
 
