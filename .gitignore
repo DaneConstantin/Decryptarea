@@ -19,7 +19,7 @@
 # misc
 .DS_Store
 *.pem
-/sanity/lib
+/sanity
 
 # debug
 npm-debug.log*
