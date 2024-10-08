@@ -74,13 +74,12 @@ const PaginatedNews: React.FC<PaginatedNewsProps> = ({ matchingArticles }) => {
                                         src={imageUrl}
                                         alt={article.title}
                                         fill
-                                        objectFit="cover"
-                                        className="absolute inset-0 rounded-lg"
+                                        className="absolute inset-0 rounded-lg object-cover"
                                     />
                                 </div>
                             )}
                             <div className="group relative">
-                                <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-gray-300">
+                                <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-gray-400">
                                     <a href={article.link}>
                                         <span className="absolute inset-0" />
                                         {article.title}
@@ -88,15 +87,15 @@ const PaginatedNews: React.FC<PaginatedNewsProps> = ({ matchingArticles }) => {
                                 </h3>
                                 <DescriptionText article={article} />
                             </div>
-                            <div className="relative mt-4 flex items-center gap-x-4">
-                                <div className="text-sm leading-6">
-                                    <p className="font-semibold">
-                                        <a href={article.creator}>
-                                            <span className="absolute inset-0" />
-                                            {article.creator ? article.creator : 'Unknown'}
-                                        </a>
-                                    </p>
-                                </div>
+                            <div className="relative mt-4 flex items-center text-sm leading-6">
+                                <label>Author -&nbsp;</label>
+                                <p className='font-semibold'>
+                                    <a href={article.creator}>
+                                        
+                                        {article.creator ? article.creator : 'Unknown'}
+                                    </a>
+                                </p>
+
                             </div>
                         </article>
                     );

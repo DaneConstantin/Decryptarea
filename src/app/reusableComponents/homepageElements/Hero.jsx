@@ -7,7 +7,7 @@ const Buttons = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-5 mt-6 md:flex-row">
 
-      <Link href="/templates" className="rounded-full border border-[#ffffff1a] border-gray-300 bg-gradient-to-br from-[#ffffff] to-[#e6e6e6] p-3 px-6 text-sm leading-normal text-black shadow-sm hover:border-[#ececec] hover:to-[#dfdfdf]">
+      <Link href="/guides" className="rounded-full border border-[#ffffff1a] border-gray-300 bg-gradient-to-br from-[#ffffff] to-[#e6e6e6] p-3 px-6 text-sm leading-normal text-black shadow-sm hover:border-[#ececec] hover:to-[#dfdfdf]">
 
         <LuNewspaper className="inline mr-2 h-5 w-5" />
         <span className='text-sm leading-normal'>Explore Guides</span>
@@ -28,11 +28,24 @@ export default function Hero() {
       <div className="flex flex-col items-center justify-center text-center z-10 relative">
         <div className="self-center max-w-6xl md:py-4 md:mx-10">
 
-          <h1 className="my-8 text-3xl font-bold text-gray-800 md:text-5xl dark:text-gray-100">Decrypt the Future</h1>
+          <h1 className="my-8 text-3xl font-bold md:text-4xl dark:text-gray-100">
+            <span className="text-transparent bg-gradient-to-tr from-yellow-400 to-yellow-600 bg-clip-text">
+              Decrypt -&nbsp;
+            </span>
+
+            <span className="text-transparent bg-gradient-to-br from-yellow-400 to-yellow-600 bg-clip-text">
+              Develop -&nbsp;
+            </span>
+
+            <span className="text-transparent bg-gradient-to-tr from-yellow-400 to-yellow-600 bg-clip-text">
+              Discover
+            </span>
+         
+          </h1>
 
           <div>
-            <p className="max-w-lg mx-auto my-4 text-base text-[#999] font-normal md:leading-relaxed  dark:text-gray-400 text-center">
-              Cutting-edge Web3 resources, blockchain insights, cryptocurrency news. Explore, learn, and build the decentralized future.
+            <p className="max-w-xl mx-auto my-4 text-base text-[#999] font-normal md:leading-relaxed  dark:text-gray-400 text-center">
+              Premium Web3 resources, blockchain insights, cryptocurrency news. <br></br>Explore, learn, and build the decentralized future.
             </p>
           </div>
 
