@@ -1,5 +1,5 @@
 // utils/stripHtmlTags.js
 'use client'
 export function stripHtmlTags(html) {
-  return html.replace(/<[^>]*>?/gm, '');
+  return html.replace(/<\/?[^>]+(>|$)/gm, '');
 };

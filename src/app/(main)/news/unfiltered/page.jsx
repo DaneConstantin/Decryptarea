@@ -1,11 +1,6 @@
-import { fetchRssFeed } from '../../../utils/fetchRssFeed'; // Import the fetch function
-
-// Helper function to format date
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  const options = { day: '2-digit', month: 'short', year: 'numeric' };
-  return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
-};
+// News.tsx (Server Component)
+import { fetchRssFeed } from '../../../utils/fetchRssFeed';
+import ArticleItem from './ArticleItem'; // Import the client component
 
 export default async function News() {
   const urls = [
@@ -27,7 +22,7 @@ export default async function News() {
     'https://decrypt.co/feed',
   ];
 
-  // Fetch both RSS feeds concurrently
+  // Fetch RSS posts from each URL
   const rssPostsArray = await Promise.all(urls.map((url) => fetchRssFeed(url)));
   const rssPosts = rssPostsArray.flat();
 
@@ -59,25 +54,7 @@ export default async function News() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{date}</h3>
               <ol className="list-decimal ml-5">
                 {articles.map((post, index) => (
-                  <li key={index} className="my-4">
-                    <article className="flex flex-col items-start justify-start">
-                      <div className="group relative">
-                        <h4 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                          <a
-                            href={post.link[0]}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <span className="absolute inset-0" />
-                            {post.title[0]}
-                          </a>
-                        </h4>
-                        <time dateTime={post.pubDate[0]} className="text-gray-500 whitespace-nowrap">
-                          {formatDate(post.pubDate[0])}
-                        </time>
-                      </div>
-                    </article>
-                  </li>
+                  <ArticleItem key={index} post={post} /> // Pass post to ArticleItem
                 ))}
               </ol>
             </div>

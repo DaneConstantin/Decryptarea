@@ -19,7 +19,6 @@
 # misc
 .DS_Store
 *.pem
-/sanity
 
 # debug
 npm-debug.log*

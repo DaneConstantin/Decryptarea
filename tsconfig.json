@@ -22,6 +22,6 @@
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(main)/guides/FeaturedArticles.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(main)/guides/FeaturedArticles.jsx", "src/app/(main)/news/PaginatedNews.jsx"],
   "exclude": ["node_modules"]
 }

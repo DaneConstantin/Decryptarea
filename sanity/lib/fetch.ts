@@ -1,10 +1,9 @@
 // ./sanity/lib/fetch.ts
 
-import type { ClientPerspective, QueryParams } from "next-sanity";
-import { draftMode } from "next/headers";
+import type { QueryParams } from "next-sanity";
 
 import  client  from "./client";
-import { token } from "./token";
+
 
 /**
  * Used to fetch data in Server Components, it has built in support for handling Draft Mode and perspectives.

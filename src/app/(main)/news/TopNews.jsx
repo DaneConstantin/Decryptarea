@@ -1,8 +1,8 @@
+// home widget
 import Link from 'next/link';
 import ReadFullButton from '../../reusableComponents/homepageElements/NewsSection/ReadFullButton';
 import Image from 'next/image';
 import { fetchNewsWithSanity } from '../../utils/fetchSanity';
-import DescriptionText from './DescriptionText';
 
 
 // Helper function to format date
@@ -30,7 +30,7 @@ export default async function TopNews() {
                                 {sortedArticles[0].title}
                             </Link>
 
-                            <DescriptionText article={sortedArticles[0]} />
+                           
                             <div className="flex items-center mt-6">
 
                                 <ReadFullButton link={sortedArticles[0].link} />
@@ -50,7 +50,7 @@ export default async function TopNews() {
                                 <h3 className="text-lg capitalize hover:text-gray-300">{post.title}</h3>
                             </Link>
 
-                            <DescriptionText article={post} />
+                           
 
                             <p className='my-2 text-xs opacity-[0.5]'>{formatDate(post.pubDate)}</p>
 
