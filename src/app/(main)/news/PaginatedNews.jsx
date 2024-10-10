@@ -1,32 +1,14 @@
 // PaginatedNews.jsx
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image'; // Import the Image component from Next.js
 import Pagination from '@/app/reusableComponents/Pagination';
+import useFetchArticles from '@/app/utils/useFetchArticles';
 
 const PaginatedNews = () => {
-    const [articles, setArticles] = useState([]);
+    const { articles, loading, error } = useFetchArticles();
     const [currentPage, setCurrentPage] = useState(1);
     const articlesPerPage = 6;
-
-    // Fetch all articles from MongoDB
-    const fetchArticles = async () => {
-        try {
-            const response = await fetch('/api'); // Adjust this path as necessary for your API route
-            if (!response.ok) {
-                throw new Error('Failed to fetch articles');
-            }
-            const data = await response.json();
-            setArticles(data); // Set the fetched articles to state
-        } catch (error) {
-            console.error('Error fetching articles:', error);
-        }
-    };
-
-    // Effect to fetch articles when the component mounts
-    useEffect(() => {
-        fetchArticles();
-    }, []);
 
     // Calculate the articles to display on the current page
     const startIndex = (currentPage - 1) * articlesPerPage;
@@ -43,6 +25,9 @@ const PaginatedNews = () => {
 
         return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
     };
+
+    if (loading) return <p>Loading articles...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (
         <>
@@ -68,7 +53,6 @@ const PaginatedNews = () => {
                                 </div>
                             )}
                             <div className="group relative">
-
                                 <a href={article.link} target="_blank" rel="noopener noreferrer">
                                     <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-gray-400">
                                         <span className="absolute inset-0" />
@@ -79,13 +63,11 @@ const PaginatedNews = () => {
                                 <p className="mt-5 line-clamp-2 text-sm leading-6 text-gray-700 hover:text-gray-500 dark:text-gray-400">
                                     {article.content || "No content preview available"}
                                 </p>
-
                             </div>
-
                         </article>
                     );
                 })}
-            </div >
+            </div>
             <Pagination
                 totalArticles={articles.length}
                 articlesPerPage={articlesPerPage}

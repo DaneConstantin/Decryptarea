@@ -10,8 +10,8 @@ const TwitterIcon = () => (
 
 const SocialLink = ({ href, icon, label }) => (
     <Link href={href} className="inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center dark:text-gray-200 hover:bg-white/[.1] rounded-md transition" aria-label={label}>
-            {icon}
-       
+        {icon}
+
     </Link>
 );
 
@@ -22,8 +22,8 @@ export default function CopyRightAndLinks() {
                 <p className="text-sm text-gray-400">©{new Date().getFullYear()} DecryptArea. All rights reserved.</p>
             </div>
             <div className='flex space-x-4'>
-                <SocialLink href="https://t.me/dcoder0" icon={ <FaTelegram size={35} />} label="Telegram" />
-                <SocialLink href="https://x.com/ethicoder" icon={<TwitterIcon />} label="Twitter" />
+                <SocialLink href="https://t.me/dcoder0" icon={<FaTelegram size={35} />} label="Telegram" />
+                <SocialLink href="https://x.com/realDcoder" icon={<TwitterIcon />} label="Twitter" />
             </div>
         </footer>
     );

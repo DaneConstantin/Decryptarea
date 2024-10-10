@@ -9,8 +9,6 @@ export const FEATURED_GUIDES = groq`*[_type == "guides" && featured == true]`;
 
 // export const FEATURED_COMPONENT_QUERY = groq`*[_type == "component" && defined(productCategory) && productCategory->slug.current == 'component']`;
 
-export const CURATED_NEWS = groq`*[_type == 'newsArticles' && defined(link)]`;
-
 export const ALLPRODUCTS_QUERY = groq`*[_type == 'product' && defined(slug)]`;
 export const PRODUCT_QUERY = groq`*[_type == "product" && slug.current == $slug][0]`;
 

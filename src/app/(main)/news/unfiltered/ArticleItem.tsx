@@ -22,7 +22,8 @@ const trimDescription = (description: string) => {
     // Strip HTML tags if the article is from CoinTelegraph
     const descriptionText = needsTrimming ? stripHtmlTags(description) : description;
 
-    return descriptionText;
+    // Limit the description length to 135 characters
+    return descriptionText.length > 175 ? descriptionText.substring(0, 175) : descriptionText;
 };
 
 const saveArticle = async (articleData: { title: string; link: string; imageUrl: string; pubDate: string; content: string }) => {
@@ -65,30 +66,15 @@ const ArticleItem = ({ post }: ArticleItemProps) => {
                         {title}
                     </a>
                 </h4>
-                {imageUrl && (
-                    <div className="relative w-full h-52">
-                        <Image
-                            src={imageUrl}
-                            alt={title}
-                            fill
-                            className="w-full h-auto mb-2" // Adjust styles as needed
-                        />
-                    </div>
-                )}
-                <time dateTime={pubDate} className="text-gray-500 whitespace-nowrap">
-                    {new Date(pubDate).toLocaleDateString('en-US', {
-                        day: '2-digit',
-                        month: 'short',
-                        year: 'numeric',
-                    })}
-                </time>
+                
+               
                 {content}
 
                 <button
                     className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
                     onClick={() => saveArticle({ title, link, imageUrl, pubDate, content })}
                 >
-                    Save this article
+                    download
                 </button>
             </article>
         </li>
