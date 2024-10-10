@@ -27,8 +27,6 @@ const CardImage = ({ previewImg, slug }: { previewImg: string, slug: string }) =
 
 
                                 }}
-                                onMouseEnter={() => setScroll(true)}
-                                onMouseLeave={() => setScroll(false)}
                             />
                         ) :
                             <Image
