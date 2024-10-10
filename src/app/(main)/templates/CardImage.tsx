@@ -1,10 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from 'next/link';
-import { useState } from "react";
 import imageUrlBuilder from "@sanity/image-url"
-
-
 
 const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
@@ -13,7 +10,6 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
 
 const CardImage = ({ previewImg, slug }: { previewImg: string, slug: string }) => {
-    const [scroll, setScroll] = useState(false);
     return (
         <div className="flex h-[250px] w-auto rounded-xl m-3 md:m-5">
             <div className="w-full h-auto overflow-hidden">

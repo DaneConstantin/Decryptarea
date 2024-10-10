@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 const useFetchArticles = () => {
-    const [articles, setArticles] = useState<any[]>([]); // Adjust the type based on your article structure
+    const [articles, setArticles] = useState([]); // Adjust the type based on your article structure
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 

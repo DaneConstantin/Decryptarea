@@ -1,10 +1,5 @@
 'use client'
-
-import Image from "next/image";
-
 import { stripHtmlTags } from "@/app/utils/stripHtmlTags";
-
-// ArticleItem.tsx (Client Component)
 
 type ArticleItemProps = {
     post: {

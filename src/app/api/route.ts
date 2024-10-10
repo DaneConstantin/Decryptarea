@@ -1,7 +1,7 @@
 import connect from '../utils/startMongo';
 import { ObjectId } from 'mongodb';
 
-export async function GET(request: Request) {
+export async function GET() {
     try {
         const client = await connect;
         const cursor = await client.db("CuratedNews").collection("News").find();

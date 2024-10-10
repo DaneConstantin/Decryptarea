@@ -4,7 +4,7 @@ import FeaturedTemplates from "../reusableComponents/homepageElements/TemplateSe
 import ContactSection from "../reusableComponents/homepageElements/ContactSection/ContactSection";
 import HomeWidget from "../reusableComponents/homepageElements/NewsSection/NewsWidget";
 import GuidesWidget from "../reusableComponents/homepageElements/GuideSection/GuidesWidget";
-import ServiceSection from "../reusableComponents/homepageElements/ServiceSection/ServiceSection";
+// import ServiceSection from "../reusableComponents/homepageElements/ServiceSection/ServiceSection";
 
 export default function Home() {
 
