@@ -2,6 +2,7 @@ import React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
 import { RxCaretDown } from "react-icons/rx";
+import Image from 'next/image';
 
 const NavLinks = () => {
 
@@ -30,17 +31,26 @@ const NavLinks = () => {
                             <li className="row-span-3 grid">
                                 <NavigationMenu.Link asChild>
                                     <a
-                                        className="focus:shadow-violet7 from-purple-700 to-purple-900 flex
-                    h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
+                                        className="flex relative h-full w-full max-w-[376px] max-h-[268px] select-none flex-col rounded-lg bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px] "
                                         href="/news"
                                     >
+                                        <Image
+                                            className="rounded-lg"
+                                            src="/img/newsbg.png"
+                                            fill
+                                            alt="News Preview"
+                                            style={{
+                                                objectFit: "cover", objectPosition: "top",
 
-                                        <div className="mt-4 mb-[7px] text-[18px] font-medium leading-[1.2] text-white">
-                                            Curated News by category
+
+                                            }}
+                                        />
+                                        <div
+                                            class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50 rounded-lg"></div>
+                                        <div className="flex justify-center my-auto text-[18px] font-medium leading-[1.2] text-white z-30 ">
+                                            Curated News
                                         </div>
-                                        <p className="text-mauve4 text-[14px] leading-[1.3]">
-
-                                        </p>
+                                       
                                     </a>
                                 </NavigationMenu.Link>
                             </li>

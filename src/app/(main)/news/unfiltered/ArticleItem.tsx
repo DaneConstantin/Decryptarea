@@ -22,7 +22,7 @@ const trimDescription = (description: string) => {
 };
 
 const saveArticle = async (articleData: { title: string; link: string; imageUrl: string; pubDate: string; content: string }) => {
-    console.log(articleData.content);
+
     try {
         const response = await fetch('/api', {
             method: 'POST',
