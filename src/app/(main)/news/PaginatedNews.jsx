@@ -10,10 +10,6 @@ const PaginatedNews = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const articlesPerPage = 6;
 
-    // Calculate the articles to display on the current page
-    const startIndex = (currentPage - 1) * articlesPerPage;
-    const selectedArticles = articles.slice(startIndex, startIndex + articlesPerPage);
-
     // Helper function to format date
     const formatDate = (dateString) => {
         const date = new Date(dateString);
