@@ -69,7 +69,7 @@ export async function POST(request: Request) {
         return new Response(JSON.stringify({ message: "Article added successfully", result }), { status: 201 });
     } catch (error) {
         console.error("Error in POST function:", error);
-        return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+        return new Response(JSON.stringify({ error: error }), { status: 500 });
     }
 }
 
