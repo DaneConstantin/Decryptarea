@@ -162,7 +162,7 @@ const NavLinks = () => {
                 <NavigationMenu.Item>
                     <NavigationMenu.Link
                         className="block text-left text-sm text-primary-dark leading-8 dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light sm:mx-4 pt-3 sm:pt-0 border-t-2 sm:border-t-0 border-primary-light dark:border-[#ffffff1a]"
-                        href="https://blog.decrypteria.com"
+                        href="https://blog.decryptarea.com"
                     >
                         Blog
                     </NavigationMenu.Link>

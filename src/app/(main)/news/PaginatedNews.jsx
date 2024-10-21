@@ -58,7 +58,7 @@ const PaginatedNews = () => {
                             )}
                             <div className="group relative">
                                 <a href={article.link} target="_blank" rel="noopener noreferrer">
-                                    <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-gray-400">
+                                    <h3 className="mt-3 text-lg font-semibold leading-6 group-hover:text-gray-500">
                                         <span className="absolute inset-0" />
                                         {article.title}
                                     </h3>

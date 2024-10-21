@@ -6,6 +6,7 @@ type ArticleItemProps = {
         title: string[];
         link: string[];
         'media:content': { url: string[]; }[];
+        'media:thumbnail': { url: string[]; }[];
         enclosure: { url: string[]; length: string[]; type: string[] }[];
         pubDate: string[];
         description: string[];
@@ -48,7 +49,7 @@ const ArticleItem = ({ post }: ArticleItemProps) => {
     // Extract relevant data from the post object with safe access
     const title = post.title[0] || 'Untitled';
     const link = post.link[0] || '#'; // Fallback to a dummy link
-    const imageUrl = post['media:content']?.[0]?.url?.[0] || post.enclosure?.[0]?.url?.[0] || ''; // Use media content or enclosure as fallback
+    const imageUrl = post['media:content']?.[0]?.url?.[0] || post['media:thumbnail']?.[0]?.url?.[0] || post.enclosure?.[0]?.url?.[0] || ''; // Use media content or enclosure as fallback
     const pubDate = post.pubDate[0] || 'Unknown Date';
     const content = trimDescription(post.description[0] || 'No description available.');
 
@@ -61,8 +62,8 @@ const ArticleItem = ({ post }: ArticleItemProps) => {
                         {title}
                     </a>
                 </h4>
-                
-               
+
+
                 {content}
 
                 <button

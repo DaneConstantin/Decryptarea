@@ -114,7 +114,7 @@ export default function HamburgerMenu() {
                         </li>
                         */}
                         <li>
-                            <a href="https://blog.decrypteria.com" className="text-primary-dark dark:text-white hover:underline">
+                            <a href="https://blog.decryptarea.com" className="text-primary-dark dark:text-white hover:underline">
                                 Blog
                             </a>
                         </li>
