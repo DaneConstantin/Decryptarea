@@ -1,7 +1,4 @@
 import connect from '../utils/startMongo';
-import { ObjectId } from 'mongodb';
-import sharp from 'sharp';
-
 
 export async function GET() {
     try {
@@ -36,57 +33,5 @@ export async function GET() {
                 'Content-Type': 'application/json',
             },
         });
-    }
-}
-
-export async function POST(request: Request) {
-    try {
-        const client = await connect;
-        const body = await request.json();
-
-        const { title, content, link, pubDate, imageUrl } = body;
-
-        // Fetch the image from the URL
-        const imageResponse = await fetch(imageUrl);
-
-        const imageBuffer = await imageResponse.arrayBuffer();
-
-        // Compress the image
-        const compressedImageBuffer = await sharp(Buffer.from(imageBuffer))
-            .resize({ width: 821 }) // Resize image to a max width of 384px
-            .jpeg({ quality: 60 }) // Compress image to 50% quality
-            .toBuffer();
-
-        // Insert the document with the compressed image as a Buffer
-        const result = await client.db("CuratedNews").collection("News").insertOne({
-            title,
-            content,
-            link,
-            pubDate,
-            imageUrl: compressedImageBuffer, // Store as Buffer
-        });
-
-        return new Response(JSON.stringify({ message: "Article added successfully", result }), { status: 201 });
-    } catch (error) {
-        console.error("Error in POST function:", error);
-        return new Response(JSON.stringify({ error: error }), { status: 500 });
-    }
-}
-
-export async function PUT(request: Request) {
-    try {
-        const client = await connect;
-        const body = await request.json();
-        const id = ObjectId.createFromHexString(body.id);
-
-        // Update the document in MongoDB
-        const result = await client.db("CuratedNews").collection("News").updateOne(
-            { _id: id },
-            { $set: { greeting: body.greeting } }
-        );
-
-        return new Response(JSON.stringify({ message: "Successfully updated the document", result }), { status: 200 });
-    } catch (error) {
-        return new Response(JSON.stringify({ error: error }), { status: 500 });
     }
 }

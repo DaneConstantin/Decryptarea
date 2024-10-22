@@ -7,6 +7,8 @@ import { GoArrowLeft } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
 import NextBreadcrumb from "@/app/reusableComponents/NextBreadcrumb";
 import { MdInfo } from "react-icons/md";
+import { slugify } from "@/app/utils/helpers";
+import PortableTextComponent from "./PortableText";
 
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId';
@@ -16,10 +18,10 @@ const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
 
 export default function Guide({ post }: { post: SanityDocument }) {
-    const { title, mainImage, description, body, imgSource } = post;
-    console.log(imgSource);
+    const { title, mainImage, body, imgSource, headings } = post;
+    console.log(headings, "headings");
     return (
-        <main className="container max-w-7xl mx-auto  mt-[100px]">
+        <main className="container max-w-7xl mx-auto mt-[80px] lg:mt-[100px]">
             <NextBreadcrumb
                 homeElement={'Home'}
                 separator={<span> <IoIosArrowForward /> </span>}
@@ -46,26 +48,94 @@ export default function Guide({ post }: { post: SanityDocument }) {
                     <div className='flex items-center justify-center text-[#999] mb-2'>
                         <MdInfo size={18} />
                         <p className='text-xs ml-1 max-w-3xl leading-[0.25rem]'>Image by <Link href={imgSource.link} target="_blank">{imgSource.name}</Link> from <Link href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image">Pixabay</Link></p>
-                    </div> 
-                    {body ? <PortableText value={body} /> : null}
+                    </div>
+                    {body ? <PortableText
+                        value={post?.body}
+                        components={myPortableTextComponents} /> : null}
                 </div>
 
-                <div id="details" className="flex flex-col gap-4 w-full lg:w-1/3 p-6 pl-12 lg:sticky top-[65px] max-h-[420px] ">
+                <div id="details" className="flex flex-col gap-4 w-full lg:w-1/3 p-6 pl-12 lg:sticky top-[65px] self-start">
                     <Link href='/guides' className="text-sm font-light hover:text-[#999]">
                         <GoArrowLeft style={{ "display": "inline", "marginRight": "4px" }} />
                         Back to Guides
                     </Link>
                     {title ? <h1 className="text-3xl font-bold leading-9 lg:text-4xl lg:leading-10">{title}</h1> : null}
 
-                    {description ? <p className="text-[#666]">{description}</p> : null}
-
-
-
+                    <Toc headings={post?.headings} />
 
                 </div>
+
             </div>
 
 
         </main >
+    )
+}
+
+const myPortableTextComponents = {
+    types: {
+    },
+    block: {
+        h2: ({ value }: any) => (
+            <h2
+                id={slugify(value.children[0].text)}
+                className="text-3xl font-bold mb-3 scroll-mt-24"
+            >
+                {value.children[0].text}
+            </h2>
+        ),
+        h3: ({ value }: any) => (
+            <h3
+                id={slugify(value.children[0].text)}
+                className="text-2xl font-bold mb-3 scroll-mt-24"
+            >
+                {value.children[0].text}
+            </h3>
+        ),
+        h4: ({ value }: any) => (
+            <h4
+                id={slugify(value.children[0].text)}
+                className="text-2xl font-bold mb-3 scroll-mt-24"
+            >
+                {value.children[0].text}
+            </h4>
+        ),
+        h5: ({ value }: any) => (
+            <h5
+                id={slugify(value.children[0].text)}
+                className="text-2xl font-bold mb-3 scroll-mt-24"
+            >
+                {value.children[0].text}
+            </h5>
+        ),
+        h6: ({ value }: any) => (
+            <h6
+                id={slugify(value.children[0].text)}
+                className="text-xl font-bold mb-3 scroll-mt-24"
+            >
+                {value.children[0].text}
+            </h6>
+        ),
+    },
+};
+
+
+const Toc = ({ headings }: any) => {
+    return (
+        <div className="toc">
+            <h2 className="text-xl font-semibold my-4">Quick Navigation</h2>
+            <nav>
+                <ul className="space-y-2">
+                    {headings?.map((heading: any) => (
+                        <li key={heading?.key} className="text-blue-500 hover:underline">
+                            <a href={`#${slugify(heading.children[0].text)}`}>
+                                {heading.children[0].text}</a>
+                        </li>
+                    ))}
+
+                </ul>
+            </nav>
+
+        </div>
     )
 }

@@ -33,6 +33,12 @@ const PaginatedNews = () => {
         currentPage * articlesPerPage
     );
 
+    const categoryColors = {
+        'Market Insights': 'bg-blue-400',
+        'Regulatory Updates': 'bg-red-400',
+        'Innovation': 'bg-green-400',
+    };
+
     return (
         <>
             <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -66,6 +72,26 @@ const PaginatedNews = () => {
                                 <p className="mt-5 line-clamp-2 text-sm leading-6 text-gray-700 hover:text-gray-500 dark:text-gray-400">
                                     {article.content || "No content preview available"}
                                 </p>
+                            </div>
+
+                            <div className="category-group flex text-sm py-2 gap-2">
+                                {console.log(article?.categories)}
+                                {
+
+                                    article?.categories?.length > 0 ? (
+                                        article.categories.map((category) => (
+                                            <div
+                                                key={category}
+                                                className={`${categoryColors[category] || 'bg-gray-500'} 
+                    text-white font-semibold py-1 px-4 rounded-lg cursor-pointer`}
+                                            >
+
+                                                {category}
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <p>No categories found.</p>
+                                    )}
                             </div>
                         </article>
                     );

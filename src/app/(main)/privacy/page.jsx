@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
                 </p>
 
                 <p className="text-gray-700 mb-6">
-                    We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. 
+                    We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
                 </p>
 
                 <h2 className="text-3xl font-semibold text-gray-900 mt-10 mb-4">Interpretation and Definitions</h2>

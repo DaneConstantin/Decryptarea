@@ -11,6 +11,8 @@ export default async function Guides() {
         query: FEATURED_GUIDES,
     })
 
+   
+
 
     if (!guides || guides.length === 0) {
         return <section>No data </section>;
