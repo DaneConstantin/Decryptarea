@@ -75,10 +75,10 @@ const Toc = ({ headings }: any) => {
             <nav>
                 <ul className="space-y-2">
                     {headings?.map((heading: any) => (
-
-                        <Link href={`#${slugify(heading.children[0].text)}`} key={heading.key} className="text-blue-500 hover:underline">
-                            {heading.children[0].text}</Link>
-
+                        <li key={heading.key} className="text-blue-500 hover:underline">
+                            <Link href={`#${slugify(heading.children[0].text)}`} >
+                                {heading.children[0].text}</Link>
+                        </li>
                     ))}
 
                 </ul>
