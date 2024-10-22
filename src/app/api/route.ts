@@ -1,5 +1,5 @@
 import connect from '../utils/startMongo';
-
+export const revalidate = 60
 export async function GET() {
     try {
         const client = await connect;
