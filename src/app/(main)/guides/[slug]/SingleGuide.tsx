@@ -8,8 +8,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import NextBreadcrumb from "@/app/reusableComponents/NextBreadcrumb";
 import { MdInfo } from "react-icons/md";
 import { slugify } from "@/app/utils/helpers";
-import PortableTextComponent from "./PortableText";
-
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'defaultProjectId';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'defaultDataset';
@@ -76,7 +74,7 @@ const myPortableTextComponents = {
     types: {
     },
     block: {
-        h2: ({ value }: any) => (
+        h2: ({ value }: string) => (
             <h2
                 id={slugify(value.children[0].text)}
                 className="text-3xl font-bold mb-3 scroll-mt-24"
@@ -84,7 +82,7 @@ const myPortableTextComponents = {
                 {value.children[0].text}
             </h2>
         ),
-        h3: ({ value }: any) => (
+        h3: ({ value }: string) => (
             <h3
                 id={slugify(value.children[0].text)}
                 className="text-2xl font-bold mb-3 scroll-mt-24"
@@ -92,7 +90,7 @@ const myPortableTextComponents = {
                 {value.children[0].text}
             </h3>
         ),
-        h4: ({ value }: any) => (
+        h4: ({ value }: string) => (
             <h4
                 id={slugify(value.children[0].text)}
                 className="text-2xl font-bold mb-3 scroll-mt-24"
@@ -100,7 +98,7 @@ const myPortableTextComponents = {
                 {value.children[0].text}
             </h4>
         ),
-        h5: ({ value }: any) => (
+        h5: ({ value }: string) => (
             <h5
                 id={slugify(value.children[0].text)}
                 className="text-2xl font-bold mb-3 scroll-mt-24"
@@ -108,7 +106,7 @@ const myPortableTextComponents = {
                 {value.children[0].text}
             </h5>
         ),
-        h6: ({ value }: any) => (
+        h6: ({ value }: string) => (
             <h6
                 id={slugify(value.children[0].text)}
                 className="text-xl font-bold mb-3 scroll-mt-24"
@@ -120,13 +118,13 @@ const myPortableTextComponents = {
 };
 
 
-const Toc = ({ headings }: any) => {
+const Toc = ({ headings }: string) => {
     return (
         <div className="toc">
             <h2 className="text-xl font-semibold my-4">Quick Navigation</h2>
             <nav>
                 <ul className="space-y-2">
-                    {headings?.map((heading: any) => (
+                    {headings?.map((heading: string) => (
                         <li key={heading?.key} className="text-blue-500 hover:underline">
                             <a href={`#${slugify(heading.children[0].text)}`}>
                                 {heading.children[0].text}</a>
