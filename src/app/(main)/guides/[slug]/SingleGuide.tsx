@@ -1,4 +1,5 @@
-//@ts-nocheck
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
 import imageUrlBuilder from "@sanity/image-url"
@@ -128,10 +129,10 @@ const Toc = ({ headings }: any) => {
             <nav>
                 <ul className="space-y-2">
                     {headings?.map((heading: any) => (
-                        <li key={heading?.key} className="text-blue-500 hover:underline">
-                            <a href={`#${slugify(heading.children[0].text)}`}>
-                                {heading.children[0].text}</a>
-                        </li>
+
+                        <Link href={`#${slugify(heading.children[0].text)}`} key={heading.key} className="text-blue-500 hover:underline">
+                            {heading.children[0].text}</Link>
+
                     ))}
 
                 </ul>
