@@ -20,7 +20,13 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: { params: QueryParams }) {
-    const post = await sanityFetch<SanityDocument>({ query: PRODUCT_QUERY, params })
+    const { slug } = await params;
+
+    // Use the 'slug' property in the fetch operation
+    const post = await sanityFetch<SanityDocument>({
+        query: PRODUCT_QUERY,
+        params: { slug }, // Pass only the slug here
+    });
     if (!post) {
         return notFound()
     }
