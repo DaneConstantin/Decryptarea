@@ -20,7 +20,7 @@ export async function generateStaticParams() {
     }))
 }
 
-export default async function Page({ params }: { params: QueryParams }) {
+export default async function Page({ params }: QueryParams) {
     const post = await sanityFetch<SanityDocument>({ query: GUIDE_QUERY, params })
     if (!post) {
         return notFound()
