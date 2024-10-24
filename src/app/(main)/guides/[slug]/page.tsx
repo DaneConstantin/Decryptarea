@@ -15,7 +15,9 @@ export async function generateStaticParams() {
 
     })
 
-    return posts.map((post) => post.slug.current)
+    return posts.map((post) => ({
+        slug: post.slug.current,
+    }))
 }
 
 export default async function Page({ params }: { params: Promise<QueryParams> }) {
