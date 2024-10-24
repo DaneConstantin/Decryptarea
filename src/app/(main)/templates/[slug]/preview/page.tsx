@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 
-export default async function Preview({ params }: { params: QueryParams }) {
+export default async function Preview({ params }: { params: Promise<QueryParams> }) {
 
     const post = await sanityFetch<SanityDocument>({ query: PRODUCT_QUERY, params })
     if (!post) {
