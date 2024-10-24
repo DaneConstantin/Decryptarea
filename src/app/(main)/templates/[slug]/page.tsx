@@ -19,7 +19,7 @@ export async function generateStaticParams() {
     }))
 }
 
-export default async function Page({ params }: QueryParams) {
+export default async function Page({ params }: { params: QueryParams }) {
     const { slug } = await params;
 
     // Use the 'slug' property in the fetch operation

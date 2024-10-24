@@ -15,13 +15,12 @@ export async function generateStaticParams() {
 
     })
 
-    return posts.map((post) => ({
-        slug: post.slug.current,
-    }))
+    return posts.map((post) => post.slug.current)
 }
 
 export default async function Page({ params }: QueryParams) {
-    const post = await sanityFetch<SanityDocument>({ query: GUIDE_QUERY, params })
+    const { slug } = params; // destructure the slug property
+    const post = await sanityFetch<SanityDocument>({ query: GUIDE_QUERY, params: { slug } }) // pass the slug property to sanityFetch
     if (!post) {
         return notFound()
     }
