@@ -1,14 +1,24 @@
 // PaginatedNews.jsx
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image'; // Import the Image component from Next.js
 import Pagination from '@/app/reusableComponents/Pagination';
 import useFetchArticles from '@/app/utils/useFetchArticles';
+import CategoryFilter from './CategoryFilter';
 
 const PaginatedNews = () => {
     const { articles, loading, error } = useFetchArticles();
     const [currentPage, setCurrentPage] = useState(1);
     const articlesPerPage = 6;
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const categories = ["Market Insights", "Regulatory Updates", "Innovation"]
+    console.log(articles.map(categ => categ.categories)); // returns array of array of categories
+    // Filter articles based on selected category
+    const filteredArticles = selectedCategory
+        ? articles.filter(article => article?.categories?.includes(selectedCategory))
+        : articles;
+
 
     // Helper function to format date
     const formatDate = (dateString) => {
@@ -21,11 +31,14 @@ const PaginatedNews = () => {
 
         return date.toLocaleDateString('en-US', options); // 'en-US' gives day month year format
     };
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedCategory]);
 
     if (loading) return <p>Loading articles...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    const sortedArticles = [...articles].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+    const sortedArticles = [...filteredArticles].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
     // Pagination logic to slice the sorted articles
     const paginatedArticles = sortedArticles.slice(
@@ -39,8 +52,13 @@ const PaginatedNews = () => {
         'Innovation': 'bg-green-400',
     };
 
+
     return (
-        <>
+        <> <CategoryFilter
+            categories={categories}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+        />
             <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 {paginatedArticles.map((article, index) => {
                     const image = article.imageUrl || "https://via.placeholder.com/550"; // Placeholder if no image
@@ -75,7 +93,6 @@ const PaginatedNews = () => {
                             </div>
 
                             <div className="category-group flex text-sm py-2 gap-2">
-                                {console.log(article?.categories)}
                                 {
 
                                     article?.categories?.length > 0 ? (
@@ -98,7 +115,7 @@ const PaginatedNews = () => {
                 })}
             </div>
             <Pagination
-                totalArticles={articles.length}
+                totalArticles={sortedArticles.length}
                 articlesPerPage={articlesPerPage}
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}

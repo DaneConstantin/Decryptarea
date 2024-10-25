@@ -9,7 +9,7 @@ const NewsWidget = () => {
         <section className="bg-white dark:bg-primary-dark ">
             <Container className="py-8 xl:px-5 px-4 md:px-8 mx-auto max-w-[1440px] ">
                 <div className="flex justify-left items-center gap-4">
-                    <h2 className='text-xl font-bold'>Top News</h2>
+                    <h2 className='text-xl font-bold'>Latest Curated News</h2>
                     <div className="flex flex-initial shrink-0  w-5 h-5 z-10 relative text-[#999] hover:text-black dark:hover:text-[#f0f0f0]">
                         <Link
                             href="/news" className='text-sm flex whitespace-nowrap'
