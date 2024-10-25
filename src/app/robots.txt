@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /privacy
+Disallow: /terms
+Disallow: /contact
+Disallow: /api
+Disallow: /css
+Disallow: /js
+
+Sitemap: https://www.decryptarea.com/sitemap.xml
