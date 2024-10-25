@@ -45,12 +45,11 @@ const NavLinks = () => {
 
                                             }}
                                         />
-                                        <div
-                                            class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50 rounded-lg"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-50 rounded-lg"></div>
                                         <div className="flex justify-center my-auto text-[18px] font-medium leading-[1.2] text-white z-30 ">
                                             Curated News
                                         </div>
-                                       
+
                                     </a>
                                 </NavigationMenu.Link>
                             </li>
@@ -77,32 +76,44 @@ const NavLinks = () => {
                         />
                     </NavigationMenu.Trigger>
                     <NavigationMenu.Content className="data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto">
-                        <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
+                        <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.85fr_1fr]">
                             <li className="row-span-3 grid">
                                 <NavigationMenu.Link asChild>
-                                    <div
-                                        className="focus:shadow-violet7 from-purple-700 to-purple-900 flex
-                    h-full w-full select-none flex-col justify-start rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
-
+                                    <a
+                                        className="flex relative h-full w-full max-w-[376px] max-h-[204px] select-none flex-col rounded-lg bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px] "
+                                        href="/news"
                                     >
+                                        <Image
+                                            className="rounded-lg"
+                                            src="/img/guides.jpg"
+                                            fill
+                                            alt="Word Guides with a background of a city skyline, using arrows"
+                                            style={{
+                                                objectFit: "cover", objectPosition: "center",
 
-                                        <div className="mt-4 mb-[7px] text-[18px] font-medium leading-[1.2] text-white">
+
+                                            }}
+                                        />
+                                        <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden  bg-gradient-to-b from-transparent via-gray-800 to-black rounded-lg"></div>
+                                        <div className="flex flex-col gap-4 text-center justify-center my-auto text-[18px] font-medium leading-[1.2] text-white z-30 ">
                                             Navigate Web3 safely
+
+                                            <p className="flex justify-center text-white text-[14px] leading-[1.3] z-30">
+                                                Step-by-step guides and tips to avoid scam projects.
+                                            </p>
                                         </div>
-                                        <p className="text-mauve4 text-[14px] leading-[1.3]">
-                                            Step-by-step guides and tips to avoid scam projects.
-                                        </p>
-                                    </div>
+                                    </a>
+
                                 </NavigationMenu.Link>
                             </li>
-                            <ListItem href="/buy-crypto" title="Buy Cryptocurrencies">
-                                General Crypto Buying Guide
+                            <ListItem href="/#" title="Buy Cryptocurrencies">
+                                {/* General Crypto Buying Guide */} Soon
                             </ListItem>
-                            <ListItem href="/cex-guide" title="Centralized">
-                                Buy on centralized Exchanges
+                            <ListItem href="/#" title="Centralized">
+                                {/* Buy on centralized Exchanges */} Soon
                             </ListItem>
-                            <ListItem href="/dex-guide" title="Decentralized">
-                                Buy on decentralized Exchanges (DEXs)
+                            <ListItem href="/#" title="Decentralized">
+                                {/* Buy on decentralized Exchanges (DEXs) */} Soon
                             </ListItem>
 
                         </ul>
