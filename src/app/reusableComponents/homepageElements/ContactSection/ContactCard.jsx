@@ -9,7 +9,7 @@ export default function ContactCard() {
             <div className="flex items-center justify-center flex-col w-48 space-y-4 p-4 rounded-xl bg-white shadow-sm dark:bg-gradient-to-b from-[#131415] to-[#050505] border border-[#ffffff1a] hover:border-[#ffffff33]">
 
                 <div className="relative rounded-full aspect-square shadow-sm  w-20 h-20">
-                    <Link href="https://x.com/realDcoder" className="absolute w-20 h-20" target="_blank">
+                    <Link href="https://x.com/realDcoder" className=" w-20 h-20" target="_blank">
                         <Image src="/img/small-profile.png" className="w-full h-full rounded-full" alt="Twitter Profile image"
                             fill
                         />

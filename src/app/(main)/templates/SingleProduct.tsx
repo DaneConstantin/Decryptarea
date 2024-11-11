@@ -16,7 +16,7 @@ const urlFor = (source: string) =>
     imageUrlBuilder({ projectId, dataset }).image(source)
 
 export default function Product({ post }: { post: SanityDocument }) {
-    const { title, mainImage, description, content, buyLink, integration, pricing, compatibility, useCase, slug } = post;
+    const { title, mainImage, description, content, buyLink, integration, pricing, compatibility, useCase, slug, releaseDate } = post;
     return (
         <main className="container max-w-7xl mx-auto  mt-[100px]">
             <NextBreadcrumb
@@ -33,11 +33,9 @@ export default function Product({ post }: { post: SanityDocument }) {
                     <div className="relative w-full h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
                         {mainImage ? (
                             <Image
-                                className="m-0 mr-4 rounded-lg"
+                                className="m-0 mr-4 rounded-lg object-cover top-0"
                                 src={urlFor(mainImage).quality(90).url()}
-                                layout="fill" // Use layout="fill" for full coverage within the container
-                                objectFit="cover" // Ensures the image covers the entire container
-                                objectPosition="top" // Positions the image from the top
+                                fill
                                 alt={mainImage.alt || ""}
                             />
                         ) : null}
@@ -62,6 +60,16 @@ export default function Product({ post }: { post: SanityDocument }) {
                     </div>
                     <table className="table-auto border-collapse border-gray-200 dark:border-[#ffffff1a]">
                         <tbody>
+                            <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
+                                <th className="text-left">Last Updated</th>
+                                <td className="text-right">
+                                    {new Date(releaseDate).toLocaleDateString('en-US', {
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric',
+                                    })}
+                                </td>
+                            </tr>
                             <tr className="border-b border-gray-200 dark:border-[#ffffff1a] leading-10">
                                 <th className="text-left">Compatibility</th>
                                 <td className="text-right">

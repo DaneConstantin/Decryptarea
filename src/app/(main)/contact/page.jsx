@@ -1,6 +1,6 @@
 import Container from "../../reusableComponents/Container";
 import Link from "next/link";
-
+import TwitterTimeline from './TwitterTimeline';
 
 export default function ContactPage() {
 
@@ -24,12 +24,16 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div className="w-full">
-                  <h4 className="mb-1 text-xl font-bold dark:text-[#f0f0f0]">
+                  <h3 className="text-gray-800 dark:text-gray-200 text-xl font-bold">
                     Telegram
-                  </h4>
-                  <Link target="_blank" href="https://t.me/dcoder0" className="text-base text-indigo-500">
-                   
-                  </Link>
+                  </h3>
+                  <div className="text-sm text-[#999] dark:text-gray-300 ">
+                    <Link href="https://t.me/dcoder0" target="_blank">
+                      <div className="text-sm text-blue-600 dark:text-blue-500 my-2">
+                        @t.me/dcoder0
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -53,13 +57,16 @@ export default function ContactPage() {
                     Email Address
                   </h4>
                   <p className="text-base text-indigo-500">
-                   
+                    contact@decryptarea.com
                   </p>
                 </div>
               </div>
             </div>
           </div>
-       
+          <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+
+            <TwitterTimeline />
+          </div>
         </div>
       </Container >
 

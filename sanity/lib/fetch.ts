@@ -17,10 +17,11 @@ export async function sanityFetch<QueryResponse>({
     tags,
   }: {
     query: string
-    params?: QueryParams
+    params?: QueryParams | Promise<QueryParams>;
     tags?: string[]
   }) {
-    return client.fetch<QueryResponse>(query, params, {
+    const resolvedParams = await params;
+    return client.fetch<QueryResponse>(query, resolvedParams , {
       next: {
         revalidate: 60, // for simple, time-based revalidation
         tags, // for tag-based revalidation
